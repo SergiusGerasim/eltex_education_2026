@@ -1,0 +1,374 @@
+Script started on 2026-07-08 11:41:21+07:00 [TERM="dumb" TTY="/dev/pts/49" COLUMNS="156" LINES="41"]
+eltex-v11@eltex-2026-summer:~$ clear
+eltex-v11@eltex-2026-summer:~$ ls
+eltex-v11_part.log  report_part1.txt
+eltex-v11@eltex-2026-summer:~$ ды    ls 
+.bash_history       .bashrc             eltex-v11_part.log  report_part1.txt    
+.bash_logout        .config/            .profile            .viminfo            
+eltex-v11@eltex-2026-summer:~$ ls    echo $HIST
+
+eltex-v11@eltex-2026-summer:~$ echo $HIST
+$HISTCMD       $HISTCONTROL   $HISTFILE      $HISTFILESIZE  $HISTSIZE      
+eltex-v11@eltex-2026-summer:~$ echo $HIST          lsclearexit clearls     echo $HISTFILESIZE
+2000
+eltex-v11@eltex-2026-summer:~$ ls -d ~/.*
+/home/eltex-v11/.bash_history  /home/eltex-v11/.bashrc	/home/eltex-v11/.profile
+/home/eltex-v11/.bash_logout   /home/eltex-v11/.config	/home/eltex-v11/.viminfo
+eltex-v11@eltex-2026-summer:~$ export HISTTIMEFORMAT="%F %T "
+eltex-v11@eltex-2026-summer:~$ рш  history
+    1  2026-07-08 11:41:21 screen
+    2  2026-07-08 11:41:21 scr
+    3  2026-07-08 11:41:21 screen -r top
+    4  2026-07-08 11:41:21 w
+    5  2026-07-08 11:41:21 clear
+    6  2026-07-08 11:41:21 screen -ls
+    7  2026-07-08 11:41:21 watch /usr/bin/vmstat
+    8  2026-07-08 11:41:21 clear
+    9  2026-07-08 11:41:21 screen -ls
+   10  2026-07-08 11:41:21 screen
+   11  2026-07-08 11:41:21 screen -ls
+   12  2026-07-08 11:41:21 screen -S top -d -m
+   13  2026-07-08 11:41:21 screen -S top -d -m cmd
+   14  2026-07-08 11:41:21 screen -ls
+   15  2026-07-08 11:41:21 top
+   16  2026-07-08 11:41:21 clear
+   17  2026-07-08 11:41:21 screen -ls
+   18  2026-07-08 11:41:21 screen -r top
+   19  2026-07-08 11:41:21 screen -ls
+   20  2026-07-08 11:41:21 screen -ls
+   21  2026-07-08 11:41:21 pkill screen
+   22  2026-07-08 11:41:21 screen -ls
+   23  2026-07-08 11:41:21 w
+   24  2026-07-08 11:41:21 clear
+   25  2026-07-08 11:41:21 screen -ls
+   26  2026-07-08 11:41:21 pkill screen
+   27  2026-07-08 11:41:21 screen -r top
+   28  2026-07-08 11:41:21 screen -ls
+   29  2026-07-08 11:41:21 clear
+   30  2026-07-08 11:41:21 screen -ls
+   31  2026-07-08 11:41:21 screen
+   32  2026-07-08 11:41:21 w
+   33  2026-07-08 11:41:21 screen -ls
+   34  2026-07-08 11:41:21 screen
+   35  2026-07-08 11:41:21 screen -S top
+   36  2026-07-08 11:41:21 screen
+   37  2026-07-08 11:41:21 screen -ls
+   38  2026-07-08 11:41:21 screen -S top -d -m top
+   39  2026-07-08 11:41:21 screen -ls
+   40  2026-07-08 11:41:21 screen -r top
+   41  2026-07-08 11:41:21 watch /usr/bin/vmstat
+   42  2026-07-08 11:41:21 screen -r top
+   43  2026-07-08 11:41:21 screen
+   44  2026-07-08 11:41:21 screen -ls
+   45  2026-07-08 11:41:21 screen -r pts-40.eltex-2026-summer 
+   46  2026-07-08 11:41:21 screen -ls
+   47  2026-07-08 11:41:21 watch /usr/bin/vmstat
+   48  2026-07-08 11:41:21 vi report_part1.txt
+   49  2026-07-08 11:41:21 screen -S top -X quit
+   50  2026-07-08 11:41:21 screen -ls
+   51  2026-07-08 11:41:21 screen -S 98666 -X quit
+   52  2026-07-08 11:41:21 screen -ls
+   53  2026-07-08 11:41:21 `whoami`_part2
+   54  2026-07-08 11:41:21 screen -ls
+   55  2026-07-08 11:41:21 screen -r pts-40.eltex-2026-summer 
+   56  2026-07-08 11:41:21 screen -ls
+   57  2026-07-08 11:41:21 clear
+   58  2026-07-08 11:41:21 screen -S `whoami`_part2
+   59  2026-07-08 11:41:21 screen -ls
+   60  2026-07-08 11:41:21 exit
+   61  2026-07-08 11:41:25 clear
+   62  2026-07-08 11:41:56 ls
+   63* 2026-07-08 11:45:13 
+   64  2026-07-08 11:47:14 echo $HISTFILESIZE
+   65  2026-07-08 11:54:19 ls -d ~/.*
+   66  2026-07-08 11:59:07 export HISTTIMEFORMAT="%F %T "
+   67  2026-07-08 11:59:15 history
+eltex-v11@eltex-2026-summer:~$ historyexport HISTTIMEFORMAT="%F %T "ls -d ~/.*                    echo $HISTFILESIZE                  lsclearexit screen -lsS `whoami`_part2clear                   screen -S `whoami`_part2ls              exit      clearls     echo $HISTFILESIZE                  date
+Wed Jul  8 12:00:54 PM +07 2026
+eltex-v11@eltex-2026-summer:~$ history | tail
+   60  2026-07-08 11:41:21 exit
+   61  2026-07-08 11:41:25 clear
+   62  2026-07-08 11:41:56 ls
+   63* 2026-07-08 11:45:13 
+   64  2026-07-08 11:47:14 echo $HISTFILESIZE
+   65  2026-07-08 11:54:19 ls -d ~/.*
+   66  2026-07-08 11:59:07 export HISTTIMEFORMAT="%F %T "
+   67  2026-07-08 11:59:15 history
+   68  2026-07-08 12:00:54 date
+   69  2026-07-08 12:01:04 history | tail
+eltex-v11@eltex-2026-summer:~$ export PROMPT_COMMAND='history -a'export PROMPT_COMMAND='history -a'                                    фэ  a'
+eltex-v11@eltex-2026-summer:~$ date    date    date
+Wed Jul  8 12:04:42 PM +07 2026
+eltex-v11@eltex-2026-summer:~$ whoami
+eltex-v11
+eltex-v11@eltex-2026-summer:~$ history
+    1  2026-07-08 11:41:21 screen
+    2  2026-07-08 11:41:21 scr
+    3  2026-07-08 11:41:21 screen -r top
+    4  2026-07-08 11:41:21 w
+    5  2026-07-08 11:41:21 clear
+    6  2026-07-08 11:41:21 screen -ls
+    7  2026-07-08 11:41:21 watch /usr/bin/vmstat
+    8  2026-07-08 11:41:21 clear
+    9  2026-07-08 11:41:21 screen -ls
+   10  2026-07-08 11:41:21 screen
+   11  2026-07-08 11:41:21 screen -ls
+   12  2026-07-08 11:41:21 screen -S top -d -m
+   13  2026-07-08 11:41:21 screen -S top -d -m cmd
+   14  2026-07-08 11:41:21 screen -ls
+   15  2026-07-08 11:41:21 top
+   16  2026-07-08 11:41:21 clear
+   17  2026-07-08 11:41:21 screen -ls
+   18  2026-07-08 11:41:21 screen -r top
+   19  2026-07-08 11:41:21 screen -ls
+   20  2026-07-08 11:41:21 screen -ls
+   21  2026-07-08 11:41:21 pkill screen
+   22  2026-07-08 11:41:21 screen -ls
+   23  2026-07-08 11:41:21 w
+   24  2026-07-08 11:41:21 clear
+   25  2026-07-08 11:41:21 screen -ls
+   26  2026-07-08 11:41:21 pkill screen
+   27  2026-07-08 11:41:21 screen -r top
+   28  2026-07-08 11:41:21 screen -ls
+   29  2026-07-08 11:41:21 clear
+   30  2026-07-08 11:41:21 screen -ls
+   31  2026-07-08 11:41:21 screen
+   32  2026-07-08 11:41:21 w
+   33  2026-07-08 11:41:21 screen -ls
+   34  2026-07-08 11:41:21 screen
+   35  2026-07-08 11:41:21 screen -S top
+   36  2026-07-08 11:41:21 screen
+   37  2026-07-08 11:41:21 screen -ls
+   38  2026-07-08 11:41:21 screen -S top -d -m top
+   39  2026-07-08 11:41:21 screen -ls
+   40  2026-07-08 11:41:21 screen -r top
+   41  2026-07-08 11:41:21 watch /usr/bin/vmstat
+   42  2026-07-08 11:41:21 screen -r top
+   43  2026-07-08 11:41:21 screen
+   44  2026-07-08 11:41:21 screen -ls
+   45  2026-07-08 11:41:21 screen -r pts-40.eltex-2026-summer 
+   46  2026-07-08 11:41:21 screen -ls
+   47  2026-07-08 11:41:21 watch /usr/bin/vmstat
+   48  2026-07-08 11:41:21 vi report_part1.txt
+   49  2026-07-08 11:41:21 screen -S top -X quit
+   50  2026-07-08 11:41:21 screen -ls
+   51  2026-07-08 11:41:21 screen -S 98666 -X quit
+   52  2026-07-08 11:41:21 screen -ls
+   53  2026-07-08 11:41:21 `whoami`_part2
+   54  2026-07-08 11:41:21 screen -ls
+   55  2026-07-08 11:41:21 screen -r pts-40.eltex-2026-summer 
+   56  2026-07-08 11:41:21 screen -ls
+   57  2026-07-08 11:41:21 clear
+   58  2026-07-08 11:41:21 screen -S `whoami`_part2
+   59  2026-07-08 11:41:21 screen -ls
+   60  2026-07-08 11:41:21 exit
+   61  2026-07-08 11:41:25 clear
+   62  2026-07-08 11:41:56 ls
+   63* 2026-07-08 11:45:13 
+   64  2026-07-08 11:47:14 echo $HISTFILESIZE
+   65  2026-07-08 11:54:19 ls -d ~/.*
+   66  2026-07-08 11:59:07 export HISTTIMEFORMAT="%F %T "
+   67  2026-07-08 11:59:15 history
+   68  2026-07-08 12:00:54 date
+   69  2026-07-08 12:01:04 history | tail
+   70  2026-07-08 12:04:10 export PROMPT_COMMAND='history -a'
+   71  2026-07-08 12:04:42 date
+   72  2026-07-08 12:04:46 whoami
+   73  2026-07-08 12:04:50 history
+eltex-v11@eltex-2026-summer:~$ history \   | tai             tail ~/.bash_history
+#1783486864
+history | tail
+#1783487050
+export PROMPT_COMMAND='history -a'
+#1783487082
+date
+#1783487086
+whoami
+#1783487090
+history
+eltex-v11@eltex-2026-summer:~$ tail ~/.bash_historyeltex-v11@eltex-2026-summer:~$ teltex-v11@eltex-2026-summer:~$ taeltex-v11@eltex-2026-summer:~$ taieltex-v11@eltex-2026-summer:~$ taileltex-v11@eltex-2026-summer:~$ tail eltex-v11@eltex-2026-summer:~$ tail ~eltex-v11@eltex-2026-summer:~$ tail ~/eltex-v11@eltex-2026-summer:~$ tail ~/.eltex-v11@eltex-2026-summer:~$ tail ~/.beltex-v11@eltex-2026-summer:~$ tail ~/.baeltex-v11@eltex-2026-summer:~$ tail ~/.baseltex-v11@eltex-2026-summer:~$ tail ~/.basheltex-v11@eltex-2026-summer:~$ tail ~/.bash_eltex-v11@eltex-2026-summer:~$ tail ~/.bash_heltex-v11@eltex-2026-summer:~$ tail ~/.bash_hieltex-v11@eltex-2026-summer:~$ tail ~/.bash_hiseltex-v11@eltex-2026-summer:~$ tail ~/.bash_histeltex-v11@eltex-2026-summer:~$ tail ~/.bash_histoeltex-v11@eltex-2026-summer:~$ tail ~/.bash_historeltex-v11@eltex-2026-summer:~$ tail ~/.bash_history                    VAR_DATE=08.07.2026
+eltex-v11@eltex-2026-summer:~$ echo $VAR_DATE
+08.07.2026
+eltex-v11@eltex-2026-summer:~$ С М VAR_ti  TIME=         TIME=$(date +%T)VTIME=$(date +%T)ATIME=$(date +%T)RTIME=$(date +%T)+TIME=$(date +%T)TIME=$(date +%T) _TIME=$(date +%T)eltex-v11@eltex-2026-summer:~$ VAR_Teltex-v11@eltex-2026-summer:~$ VAR_TIeltex-v11@eltex-2026-summer:~$ VAR_TIMeltex-v11@eltex-2026-summer:~$ VAR_TIMEeltex-v11@eltex-2026-summer:~$ VAR_TIME=eltex-v11@eltex-2026-summer:~$ VAR_TIME=$eltex-v11@eltex-2026-summer:~$ VAR_TIME=$(eltex-v11@eltex-2026-summer:~$ VAR_TIME=$(deltex-v11@eltex-2026-summer:~$ VAR_TIME=$(daeltex-v11@eltex-2026-summer:~$ VAR_TIME=$(dateltex-v11@eltex-2026-summer:~$ VAR_TIME=$(dateeltex-v11@eltex-2026-summer:~$ VAR_TIME=$(date eltex-v11@eltex-2026-summer:~$ VAR_TIME=$(date +eltex-v11@eltex-2026-summer:~$ VAR_TIME=$(date +%eltex-v11@eltex-2026-summer:~$ VAR_TIME=$(date +%Teltex-v11@eltex-2026-summer:~$ VAR_TIME=$(date +%T)
+eltex-v11@eltex-2026-summer:~$ $echo V       echo $VAR_TIME
+12:15:17
+eltex-v11@eltex-2026-summer:~$ VAR_F DATE=$(date +%F)
+eltex-v11@eltex-2026-summer:~$ echo &va  VAR_DATE
+[1] 3738561
+
+bash: VAR_DATE: command not found
+[1]+  Done                    echo
+eltex-v11@eltex-2026-summer:~$ echo &VAR_DATEeltex-v11@eltex-2026-summer:~$ echeltex-v11@eltex-2026-summer:~$ echoeltex-v11@eltex-2026-summer:~$ echo eltex-v11@eltex-2026-summer:~$ echo &VAR_DATE $VAR_DATE
+2026-07-08
+eltex-v11@eltex-2026-summer:~$ DATE_TIME="$DATE $TIME"eltex-v11@eltex-2026-summer:~$ DATE_TIME=eltex-v11@eltex-2026-summer:~$ DATE_TIME="eltex-v11@eltex-2026-summer:~$ DATE_TIME="$МDATE $TIME"ФDATE $TIME"КDATE $TIME"DATE $TIME" DATE $TIME" DATE $TIME" VDATE $TIME"ADATE $TIME"RDATE $TIME"_DATE $TIME"eltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_Deltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DAeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATEeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE eltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $eltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $TVTIME"ATIME"RTIME"_TIME"eltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $VAR_Teltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $VAR_TIeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $VAR_TIMeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $VAR_TIMEeltex-v11@eltex-2026-summer:~$ DATE_TIME="$VAR_DATE $VAR_TIME"
+eltex-v11@eltex-2026-summer:~$ echo $DATE_TIME
+2026-07-08 12:15:17
+eltex-v11@eltex-2026-summer:~$ ls /bin/*[0-9]* /sbin/*[0-9]*                             ls /bin/*[0-9]* /sbin/*[0-9]*
+/bin/addr2line			/bin/md5sum.textutils		 /bin/x86_64-linux-gnu-ar		/bin/x86_64-linux-gnu-lto-dump
+/bin/b2sum			/bin/pdb3			 /bin/x86_64-linux-gnu-as		/bin/x86_64-linux-gnu-lto-dump-12
+/bin/base32			/bin/pdb3.11			 /bin/x86_64-linux-gnu-c++filt		/bin/x86_64-linux-gnu-nm
+/bin/base64			/bin/perl5.36.0			 /bin/x86_64-linux-gnu-cpp		/bin/x86_64-linux-gnu-objcopy
+/bin/bunzip2			/bin/perl5.36-x86_64-linux-gnu	 /bin/x86_64-linux-gnu-cpp-12		/bin/x86_64-linux-gnu-objdump
+/bin/bzip2			/bin/ping4			 /bin/x86_64-linux-gnu-dwp		/bin/x86_64-linux-gnu-ranlib
+/bin/bzip2recover		/bin/ping6			 /bin/x86_64-linux-gnu-elfedit		/bin/x86_64-linux-gnu-readelf
+/bin/c89			/bin/pl2pm			 /bin/x86_64-linux-gnu-gcc		/bin/x86_64-linux-gnu-size
+/bin/c89-gcc			/bin/pod2html			 /bin/x86_64-linux-gnu-gcc-12		/bin/x86_64-linux-gnu-strings
+/bin/c99			/bin/pod2man			 /bin/x86_64-linux-gnu-gcc-ar		/bin/x86_64-linux-gnu-strip
+/bin/c99-gcc			/bin/pod2text			 /bin/x86_64-linux-gnu-gcc-ar-12	/sbin/dumpe2fs
+/bin/cpan5.36-x86_64-linux-gnu	/bin/pod2usage			 /bin/x86_64-linux-gnu-gcc-nm		/sbin/e2freefrag
+/bin/cpp-12			/bin/py3clean			 /bin/x86_64-linux-gnu-gcc-nm-12	/sbin/e2fsck
+/bin/diff3			/bin/py3compile			 /bin/x86_64-linux-gnu-gcc-ranlib	/sbin/e2image
+/bin/enc2xs			/bin/py3versions		 /bin/x86_64-linux-gnu-gcc-ranlib-12	/sbin/e2label
+/bin/gcc-12			/bin/pydoc3			 /bin/x86_64-linux-gnu-gcov		/sbin/e2mmpstatus
+/bin/gcc-ar-12			/bin/pydoc3.11			 /bin/x86_64-linux-gnu-gcov-12		/sbin/e2scrub
+/bin/gcc-nm-12			/bin/pygettext3			 /bin/x86_64-linux-gnu-gcov-dump	/sbin/e2scrub_all
+/bin/gcc-ranlib-12		/bin/pygettext3.11		 /bin/x86_64-linux-gnu-gcov-dump-12	/sbin/e2undo
+/bin/gcov-12			/bin/python3			 /bin/x86_64-linux-gnu-gcov-tool	/sbin/e4crypt
+/bin/gcov-dump-12		/bin/python3.11			 /bin/x86_64-linux-gnu-gcov-tool-12	/sbin/e4defrag
+/bin/gcov-tool-12		/bin/sha1sum			 /bin/x86_64-linux-gnu-gold		/sbin/fsck.ext2
+/bin/grub-menulst2cfg		/bin/sha224sum			 /bin/x86_64-linux-gnu-gp-archive	/sbin/fsck.ext3
+/bin/grub-mkpasswd-pbkdf2	/bin/sha256sum			 /bin/x86_64-linux-gnu-gp-collect-app	/sbin/fsck.ext4
+/bin/grub-syslinux2cfg		/bin/sha384sum			 /bin/x86_64-linux-gnu-gp-display-html	/sbin/killall5
+/bin/h2ph			/bin/sha512sum			 /bin/x86_64-linux-gnu-gp-display-src	/sbin/mke2fs
+/bin/h2xs			/bin/ssh-argv0			 /bin/x86_64-linux-gnu-gp-display-text	/sbin/mkfs.ext2
+/bin/i386			/bin/systemd-id128		 /bin/x86_64-linux-gnu-gprof		/sbin/mkfs.ext3
+/bin/linux32			/bin/traceroute6		 /bin/x86_64-linux-gnu-gprofng		/sbin/mkfs.ext4
+/bin/linux64			/bin/traceroute6.db		 /bin/x86_64-linux-gnu-ld		/sbin/resize2fs
+/bin/lto-dump-12		/bin/x86_64			 /bin/x86_64-linux-gnu-ld.bfd		/sbin/tune2fs
+/bin/md5sum			/bin/x86_64-linux-gnu-addr2line  /bin/x86_64-linux-gnu-ld.gold		/sbin/update-grub2
+eltex-v11@eltex-2026-summer:~$                                                                            eltex-v11@eltex-2026-summer:~$ PS! 1=''$'U'S'E'R'eltex-v11@eltex-2026-summer:~$ PS1='$USER'eltex-v11@eltex-2026-summer:~$ PS1='$Ueltex-v11@eltex-2026-summer:~$ PS1='$USeltex-v11@eltex-2026-summer:~$ PS1='$USEeltex-v11@eltex-2026-summer:~$ PS1='$USER"'' @'$'('h'o's't'n'a'm'e')'-'\'$'9'd'' ' ('d'a'e'' t'e' '+'%'H':'%'M')'>' 'eltex-v11@eltex-2026-summer:~$ PS1='$USER@$(hostname)-\$(date +%H:%M)> ' "eltex-v11@eltex-2026-summer:~$ PS1eltex-v11@eltex-2026-summer:~$ PS1=eltex-v11@eltex-2026-summer:~$ PS1='$USER@$(hostname)-\$(date +%H:%M)> " eltex-v11@eltex-2026-summer:~$ PS1="$USER@$(hostname)-\$(date +%H:%M)> "
+eltex-v11@eltex-2026-summer-12:34> учзщке      export PS1
+eltex-v11@eltex-2026-summer-12:37> bash
+eltex-v11@eltex-2026-summer:~$ cat ~/.bashrc
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+eltex-v11@eltex-2026-summer:~$ cat ~/.bashrcexport PS1   PS1="$USER@$(hostname)-\$(date +%H:%M)> "eltex-v11@eltex-2026-summer:~$ screen -r eltex-v11_part2                ls                ls /bin/*[0-9]* /sbin/*[0-9]*echo $DATE_TIME              ls /bin/*[0-9]* /sbin/*[0-9]*screen -ls                   r eltex-v11_part2 PS1="$USER@$(hostname)-\$(date +%H:%M)> "eltex-v11@eltex-2026-summer:~$ export PS1                               cat ~/.bashrc             clear
+eltex-v11@eltex-2026-summer:~$ exit    exit
+exit
+eltex-v11@eltex-2026-summer-12:41> < export PS1="$USER@$(hostname)-\$(date +%H:%M)> "          eltex-v11@eltex-2026-summer-12:41> export PS1="$USER@$(hostname)-\$(date                                                                                                                                                                                                eltex-v11@eltex-2026-summer-12:41> export PS1="$USER@$(hostname)-\$(date +%H:%M)> "
+eltex-v11@eltex-2026-summer-12:42> bash
+eltex-v11@eltex-2026-summer:~$ exit
+exit
+eltex-v11@eltex-2026-summer-12:42> bash --norc
+eltex-v11@eltex-2026-summer-12:42>                                                                                                                        eltex-v11@eltex-2026-summer-12:42>                                                                            eltex-v11@eltex-2026-summer-12:42> учше    exit
+exit
+eltex-v11@eltex-2026-summer-12:44>                                                                                                                        eltex-v11@eltex-2026-summer-12:44>                                                                                                                                                            eltex-v11@eltex-2026-summer-12:44> ls
+eltex-v11_part.log  report_part1.txt
+eltex-v11@eltex-2026-summer-12:45> mkdir $(date +%Y)-{01..12}
+eltex-v11@eltex-2026-summer-12:45> ls -d 2026-*
+2026-01  2026-02  2026-03  2026-04  2026-05  2026-06  2026-07  2026-08	2026-09  2026-10  2026-11  2026-12
+eltex-v11@eltex-2026-summer-12:45> учше    exit
+exit
+
+Script done on 2026-07-08 12:47:32+07:00 [COMMAND_EXIT_CODE="0"]
