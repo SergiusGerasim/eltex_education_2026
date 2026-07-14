@@ -1,0 +1,2003 @@
+Script started on 2026-07-12 17:41:35+00:00 [TERM="screen.xterm-256color" TTY="/dev/pts/0" COLUMNS="87" LINES="76"]
+root@eltex-practice2-v11:~# sudo useradd -m -s /bin/bash user11
+root@eltex-practice2-v11:~# sudo passwd user1
+New password:
+Retype new password:
+No password has been supplied.
+New password:
+Retype new password:
+passwd: password updated successfully
+root@eltex-practice2-v11:~# id user1
+uid=1001(user1) gid=1001(user1) groups=1001(user1)
+root@eltex-practice2-v11:~# ls -ld /home/user1
+drwxr-x--- 2 user1 user1 4096 Jul 12 17:43 /home/user1
+root@eltex-practice2-v11:~# adduserguser2
+info: Adding user `user2' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2' (1002) with group `user2 (1002)' ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+No password has been supplied.
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+	Full Name []:
+	Room Number []:
+	Work Phone []:
+	Home Phone []:
+	Other []:
+Is the information correct? [Y/n] y
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users' ...
+root@eltex-practice2-v11:~# adduser --gecos "" user3
+info: Adding user `user3' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1003) ...
+info: Adding new user `user3' (1003) with group `user3 (1003)' ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users' ...
+root@eltex-practice2-v11:~# man usermod
+USERMOD(8)		     System Management Commands			  USERMOD(8)
+
+NAME
+       usermod - modify a user account
+
+SYNOPSIS
+
+       usermod [options] LOGIN
+
+DESCRIPTION
+       The usermod command modifies the system account files.
+
+OPTIONS
+       The options which apply to the usermod command are:
+
+       -a, --append
+	   Add the user to the supplementary group(s). Use only with the -G option.
+
+       -b, --badname
+	   Allow names that do not conform to standards.
+
+       -c, --comment COMMENT
+	   update the comment field of the user in /etc/passwd, which is normally
+	   modified using the chfn(1) utility.
+
+       -d, --home HOME_DIR
+	   The user's new login directory.
+
+	   If the -m option is given, the contents of the current home directory
+	   will be moved to the new home directory, which is created if it does not
+	   already exist. If the current home directory does not exist the new home
+	   directory will not be created.
+
+       -e, --expiredate EXPIRE_DATE
+	   The date on which the user account will be disabled. The date is
+	   specified in the format YYYY-MM-DD. Integers as input are interpreted as
+	   days after 1970-01-01.
+
+	   An input of -1 or an empty string will blank the account expiration field
+	   in the shadow password file. The account will remain available with no
+	   date limit.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -f, --inactive INACTIVE
+	   defines the number of days after the password exceeded its maximum age
+	   during which the user may still login by immediately replacing the
+	   password. This grace period before the account becomes inactive is stored
+	   in the shadow password file. An input of 0 will disable an expired
+	   password with no delay. An input of -1 will blank the respective field in
+	   the shadow password file. See shadow(5) for more information.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -g, --gid GROUP
+	   The name or numerical ID of the user's new primary group. The group must
+	   exist.
+
+	   Any file from the user's home directory owned by the previous primary
+	   group of the user will be owned by this new group.
+
+	   The group ownership of files outside of the user's home directory must be
+	   fixed manually.
+
+	   The change of the group ownership of files inside of the user's home
+	   directory is also not done if the home dir owner uid is different from
+	   the current or new user id. This is a safety measure for special home
+	   directories such as /.
+
+       -G, --groups GROUP1[,GROUP2,...[,GROUPN]]]
+	   A list of supplementary groups which the user is also a member of. Each
+	   group is separated from the next by a comma, with no intervening
+	   whitespace. The groups must exist.
+ Manual page usermod(8) line 1 (press h for help or q to quit)/-sUSERMOD(8)		      System Management Commands		   USERMOD(8)
+
+NAME
+       usermod - modify a user account
+
+SYNOPSIS
+
+       usermod [options] LOGIN
+
+DESCRIPTION
+       The usermod command modifies the system account files.
+
+OPTIONS
+       The options which apply to the usermod command are:
+
+       -a, --append
+	   Add the user to the supplementary group(s). Use only with the -G option.
+
+       -b, --badname
+	   Allow names that do not conform to standards.
+
+       -c, --comment COMMENT
+	   update the comment field of the user in /etc/passwd, which is normally
+	   modified using the chfn(1) utility.
+
+       -d, --home HOME_DIR
+	   The user's new login directory.
+
+	   If the -m option is given, the contents of the current home directory
+	   will be moved to the new home directory, which is created if it does not
+	   already exist. If the current home directory does not exist the new home
+	   directory will not be created.
+
+       -e, --expiredate EXPIRE_DATE
+	   The date on which the user account will be disabled. The date is
+	   specified in the format YYYY-MM-DD. Integers as input are interpreted as
+	   days after 1970-01-01.
+
+	   An input of -1 or an empty string will blank the account expiration field
+	   in the shadow password file. The account will remain available with no
+	   date limit.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -f, --inactive INACTIVE
+	   defines the number of days after the password exceeded its maximum age
+	   during which the user may still login by immediately replacing the
+	   password. This grace period before the account becomes inactive is stored
+	   in the shadow password file. An input of 0 will disable an expired
+	   password with no delay. An input of -1 will blank the respective field in
+	   the shadow password file. See shadow(5) for more information.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -g, --gid GROUP
+	   The name or numerical ID of the user's new primary group. The group must
+	   exist.
+
+	   Any file from the user's home directory owned by the previous primary
+	   group of the user will be owned by this new group.
+
+	   The group ownership of files outside of the user's home directory must be
+	   fixed manually.
+
+	   The change of the group ownership of files inside of the user's home
+	   directory is also not done if the home dir owner uid is different from
+	   the current or new user id. This is a safety measure for special home
+	   directories such as /.
+
+       -G, --groups GROUP1[,GROUP2,...[,GROUPN]]]
+	   A list of supplementary groups which the user is also a member of. Each
+	   group is separated from the next by a comma, with no intervening
+	   whitespace. The groups must exist.
+USERMOD(8)		     System Management Commands			  USERMOD(8)
+
+NAME
+       usermod - modify a user account
+
+SYNOPSIS
+
+       usermod [options] LOGIN
+
+DESCRIPTION
+       The usermod command modifies the system account files.
+
+OPTIONS
+       The options which apply to the usermod command are:
+
+       -a, --append
+	   Add the user to the supplementary group(s). Use only with the -G option.
+
+       -b, --badname
+	   Allow names that do not conform to standards.
+
+       -c, --comment COMMENT
+	   update the comment field of the user in /etc/passwd, which is normally
+	   modified using the chfn(1) utility.
+
+       -d, --home HOME_DIR
+	   The user's new login directory.
+
+	   If the -m option is given, the contents of the current home directory
+	   will be moved to the new home directory, which is created if it does not
+	   already exist. If the current home directory does not exist the new home
+	   directory will not be created.
+
+       -e, --expiredate EXPIRE_DATE
+	   The date on which the user account will be disabled. The date is
+	   specified in the format YYYY-MM-DD. Integers as input are interpreted as
+	   days after 1970-01-01.
+
+	   An input of -1 or an empty string will blank the account expiration field
+	   in the shadow password file. The account will remain available with no
+	   date limit.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -f, --inactive INACTIVE
+	   defines the number of days after the password exceeded its maximum age
+	   during which the user may still login by immediately replacing the
+	   password. This grace period before the account becomes inactive is stored
+	   in the shadow password file. An input of 0 will disable an expired
+	   password with no delay. An input of -1 will blank the respective field in
+	   the shadow password file. See shadow(5) for more information.
+
+	   This option requires a /etc/shadow file. A /etc/shadow entry will be
+	   created if there were none.
+
+       -g, --gid GROUP
+	   The name or numerical ID of the user's new primary group. The group must
+	   exist.
+
+	   Any file from the user's home directory owned by the previous primary
+	   group of the user will be owned by this new group.
+
+	   The group ownership of files outside of the user's home directory must be
+	   fixed manually.
+
+	   The change of the group ownership of files inside of the user's home
+	   directory is also not done if the home dir owner uid is different from
+	   the current or new user id. This is a safety measure for special home
+	   directories such as /.
+
+       -G, --groups GROUP1[,GROUP2,...[,GROUPN]]]
+	   A list of supplementary groups which the user is also a member of. Each
+	   group is separated from the next by a comma, with no intervening
+	   whitespace. The groups must exist.
+...skipping...
+       -s, --shell SHELL
+	   changes the user's login shell. An empty string for SHELL blanks the
+	   field in /etc/passwd and logs the user into the system's default shell.
+
+       -u, --uid UID
+	   The new value of the user's ID.
+
+	   This value must be unique, unless the -o option is used. The value must
+	   be non-negative.
+
+	   The user's mailbox, and any files which the user owns and which are
+	   located in the user's home directory will have the file user ID changed
+	   automatically.
+
+	   The ownership of files outside of the user's home directory must be fixed
+	   manually.
+
+	   The change of the user ownership of files inside of the user's home
+	   directory is also not done if the home dir owner uid is different from
+	   the current or new user id. This is a safety measure for special home
+	   directories such as /.
+
+	   No checks will be performed with regard to the UID_MIN, UID_MAX,
+	   SYS_UID_MIN, or SYS_UID_MAX from /etc/login.defs.
+
+       -U, --unlock
+	   Unlock a user's password. This removes the '!' in front of the encrypted
+	   password. You can't use this option with -p or -L.
+
+	   Note: if you wish to unlock the account (not only access with a
+	   password), you should also set the EXPIRE_DATE (for example to 99999, or
+	   to the EXPIRE value from /etc/default/useradd).
+
+       -v, --add-subuids FIRST-LAST
+	   Add a range of subordinate uids to the user's account.
+
+	   This option may be specified multiple times to add multiple ranges to a
+	   user's account.
+
+	   No checks will be performed with regard to SUB_UID_MIN, SUB_UID_MAX, or
+	   SUB_UID_COUNT from /etc/login.defs.
+
+       -V, --del-subuids FIRST-LAST
+	   Remove a range of subordinate uids from the user's account.
+
+	   This option may be specified multiple times to remove multiple ranges to
+	   a user's account. When both --del-subuids and --add-subuids are
+	   specified, the removal of all subordinate uid ranges happens before any
+	   subordinate uid range is added.
+
+	   No checks will be performed with regard to SUB_UID_MIN, SUB_UID_MAX, or
+	   SUB_UID_COUNT from /etc/login.defs.
+
+       -w, --add-subgids FIRST-LAST
+	   Add a range of subordinate gids to the user's account.
+
+	   This option may be specified multiple times to add multiple ranges to a
+	   user's account.
+
+	   No checks will be performed with regard to SUB_GID_MIN, SUB_GID_MAX, or
+	   SUB_GID_COUNT from /etc/login.defs.
+
+       -W, --del-subgids FIRST-LAST
+	   Remove a range of subordinate gids from the user's account.
+
+	   This option may be specified multiple times to remove multiple ranges to
+	   a user's account. When both --del-subgids and --add-subgids are
+	   specified, the removal of all subordinate gid ranges happens before any
+	   subordinate gid range is added.
+
+	   No checks will be performed with regard to SUB_GID_MIN, SUB_GID_MAX, or
+	   SUB_GID_COUNT from /etc/login.defs.
+
+       -Z, --selinux-user SEUSER
+	   defines the SELinux user to be mapped with LOGIN. An empty string ("")
+ Manual page usermod(8) line 143 (press h for help or q to quit)root@eltex-practice2-v11:~# man nologin
+NOLOGIN(8)		     System Management Commands			  NOLOGIN(8)
+
+NAME
+       nologin - politely refuse a login
+
+SYNOPSIS
+
+       nologin
+
+DESCRIPTION
+       The nologin command displays a message that an account is not available and
+       exits non-zero. It is intended as a replacement shell field for accounts that
+       have been disabled.
+
+       To disable all logins, investigate nologin(5).
+
+       If SSH_ORIGINAL_COMMAND is populated it will be logged.
+
+SEE ALSO
+       login(1), nologin(5).
+
+HISTORY
+       The nologin command appeared in BSD 4.4.
+
+shadow-utils 4.13		     05/30/2024				  NOLOGIN(8)
+ Manual page nologin(8) line 1/25 (END) (press h for help or q to quit)root@eltex-practice2-v11:~# cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/usr/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/dash
+/usr/bin/screen
+/usr/bin/tmux
+root@eltex-practice2-v11:~# whichenologinls
+/usr/sbin/nologin
+root@eltex-practice2-v11:~# usermod -s /usr/sbin/nologin user3
+root@eltex-practice2-v11:~# su - user3
+This account is currently not available.
+root@eltex-practice2-v11:~# su -s /bin/bash user3
+user3@eltex-practice2-v11:/root$ exit
+exit
+root@eltex-practice2-v11:~# groupadd practice2_group
+root@eltex-practice2-v11:~# usermod --help
+Usage: usermod [options] LOGIN
+
+Options:
+  -a, --append			append the user to the supplemental GROUPS
+				mentioned by the -G option without removing
+				the user from other groups
+  -b, --badname			allow bad names
+  -c, --comment COMMENT		new value of the GECOS field
+  -d, --home HOME_DIR		new home directory for the user account
+  -e, --expiredate EXPIRE_DATE	set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE	set password inactive after expiration
+				to INACTIVE
+  -g, --gid GROUP		force use GROUP as new primary group
+  -G, --groups GROUPS		new list of supplementary GROUPS
+  -h, --help			display this help message and exit
+  -l, --login NEW_LOGIN		new value of the login name
+  -L, --lock			lock the user account
+  -m, --move-home		move contents of the home directory to the
+				new location (use only with -d)
+  -o, --non-unique		allow using duplicate (non-unique) UID
+  -p, --password PASSWORD	use encrypted password for the new password
+  -P, --prefix PREFIX_DIR	prefix directory where are located the /etc/* files
+  -r, --remove			remove the user from only the supplemental GROUPS
+				mentioned by the -G option without removing
+				the user from other groups
+  -R, --root CHROOT_DIR		directory to chroot into
+  -s, --shell SHELL		new login shell for the user account
+  -u, --uid UID			new UID for the user account
+  -U, --unlock			unlock the user account
+  -v, --add-subuids FIRST-LAST	add range of subordinate uids
+  -V, --del-subuids FIRST-LAST	remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST	add range of subordinate gids
+  -W, --del-subgids FIRST-LAST	remove range of subordinate gids
+  -Z, --selinux-user SEUSER	new SELinux user mapping for the user account
+
+root@eltex-practice2-v11:~# usermod -aG practice2_group-user1art1.log
+root@eltex-practice2-v11:~# usermod -aG practice2_group user2
+root@eltex-practice2-v11:~# usermod -aG practice2_group user3
+root@eltex-practice2-v11:~# groups user1
+user1 : user1 practice2_group
+root@eltex-practice2-v11:~# groups user2
+user2 : user2 users practice2_group
+root@eltex-practice2-v11:~# groups user3
+user3 : user3 users practice2_group
+root@eltex-practice2-v11:~# exit
+exit
+
+Script done on 2026-07-12 18:27:34+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-07-12 18:36:23+00:00 [TERM="screen.xterm-256color" TTY="/dev/pts/0" COLUMNS="87" LINES="76"]
+root@eltex-practice2-v11:~# groups user3ьлвшк
+user3 : user3 users practice2_group
+root@eltex-practice2-v11:~# mkdir --help
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents	    no error if existing, make parent directories as needed,
+		    with their file modes unaffected by any -m option.
+  -v, --verbose	    print a message for each created directory
+  -Z		       set SELinux security context of each created directory
+			 to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+			 or SMACK security context to CTX
+      --help	    display this help and exit
+      --version	    output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+root@eltex-practice2-v11:~# mkdir -p /opt/share
+root@eltex-practice2-v11:~# ls /opt
+share
+root@eltex-practice2-v11:~# chown root:practice2_group-/opt/sharelog
+root@eltex-practice2-v11:~# sudo chmod g+rwx /opt/share
+root@eltex-practice2-v11:~# sudo chmod g+s /opt/share
+root@eltex-practice2-v11:~# ls -ld /opt/share
+drwxrwsr-x 2 root practice2_group 4096 Jul 12 18:37 /opt/share
+root@eltex-practice2-v11:~# suг- user1
+user1@eltex-practice2-v11:~$ vin~/.bashrc
+"~/.bashrc" 117L, 3771B▽  zz	       10;?11;?# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)# for examples# If not running interactively, don't do anything
+case $- in
+    *i*) ;;*) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then# We have color support; assume it's compliant with Ecma-48# (ISO/IEC-6429). (Lack of such support is extremely rare, and such# a case would tend to support setf rather than setaf.)color_prompt=yes
+    elsecolor_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;334m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac1,1Top# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;*) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then# We have color support; assume it's compliant with Ecma-48# (ISO/IEC-6429). (Lack of such support is extremely rare, and such# a case would tend to support setf rather than setaf.)color_prompt=yes
+    elsecolor_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;334m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac1,1Top"~/.bashrc" 117L, 3771B~@k   2~@k   3~@k   4,0-1~@k	5,1  ~@k   6~@k	  7~@k	 8~@k	9~@k   10,0-1~@k   1,1	~@k   2~@k   3~@k   4,0-1~@k   5,1  ~@k	  6~@k	 7,0-1~@k   8,1	 ~@k   9~@k   20~@k   1,0-1~@k	 2,1  ~@k   3~@k   4~@k	  5,0-1~@k   6,1  ~@k	7~@k   8~@k   9,0-1~@k	 30,1  ~@k   []1~@k   []2,0-1~@k   3,1	~@k   4~@k   5~@k   6~@k   7,0-1~@k   8,1  ~@k	 9~@k	40~@k	1~@k   2,0-1~@k	  3,1  ~@k   4~@k   5~@k   6~@k	  7,0-1~@k   8,1  ~@k	9~@k   50,1-81~@k   2~@k   3~@k	  4,1  ~@k   5,1-8~@k	6,1  ~@k   7~@k	  8,0-1~@k   9,1  ~@k	60~@k	1~@k   2~@k   3~@k   4~@k   5,0-1~@k   6,1  ~@k	  7~@k	 8~@k	9~@k
+# enable color support of ls and also add handy aliases70,12%
+if [ -x /usr/bin/dircolors ]; then71,14%~@k   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -bb)"72,19%~@k	3~@k
+alias ls='ls --color=auto'74,0-111%~@k
+#alias dir='dir --color=auto'75,113%~@k
+#alias vdir='vdir --color=auto'76,115%~@k   alias grep='grep --color=auto'77,120%~@k
+alias fgrep='fgrep --color=auto'78,122%~@k
+alias egrep='egrep --color=auto'79,125%~@k
+fi80,127%~@k
+81,0-129%~@k
+# colored GCC warnings and errors82,131%~@k
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'83,134%~@k
+84,136%~@k
+# some more ls aliases85,138%~@k
+alias ll='ls -alF'86,0-140%~@k
+alias la='ls -A'87,143%~@k
+alias l='ls -CF'88,145%~@k
+89,0-147%~@k
+# Add an "alert" alias for long running commands.  Use like so:90,150%~@k
+#   sleep 10; alert91,152%~@k	alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error))" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'92,155%~@k	  3~@k
+94,0-157%~@k
+# Alias definitions.95,160%~@k
+# You may want to put all your additions into a separate file like96,162%~@k   # ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.97,166%~@k
+98,0-168%~@k
+if [ -f ~/.bash_aliases ]; then99,171%~@k
+ . ~/.bash_aliases100,173%~@k
+fi101,175%~@k
+102,177%~@k
+# enable programmable completion features (you don't need to enable103,0-180%~@k
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile104,182%~@k
+# sources /etc/bash.bashrc).105,184%~@k
+if ! shopt -oq posix; then106,186%~@k
+if [ -f /usr/share/bash-completion/bash_completion ]; then107,0-188%~@k
+ . /usr/share/bash-completion/bash_completion108,191%~@k
+elif [ -f /etc/bash_completion ]; then109,193%~@k
+ . /etc/bash_completion110,195%~@k
+fi111,197%~@k
+fi112,1Bot~@k	3~@k   4~@k   5~@k   6~@k   7~@k   ~@k	 ~@k   ~@k   ~@k   ~@k	 ~@k   ~@k   ~@k   ~@k	 ~@k   ~@k   ~@k   ~@k	 ~@k   ~@k   ~@k   ~@k	 ~@k   ~@k   ~@k   ~@k	 2~@k	~@k   ^M  o
+-- INSERT --118,1Bot
+118,1Boto21i21^[  118,0-1Bot~@k	  7,1  ~@k   8,0-1o
+-- INSERT --119,1Bot
+119,1Botu2m3a4s5umask67080901041^[  119,10Bot::w".bashrc" 119L, 3783B written119,10Bot119,10Bot::quser1@eltex-practice2-v11:~$ source ~/.rcsh
+user1@eltex-practice2-v11:~$ umask
+0004
+user1@eltex-practice2-v11:~$ touch testf.txt
+user1@eltex-practice2-v11:~$ mkdir testD
+user1@eltex-practice2-v11:~$ ls -ld testf.txt testD
+drwxrwx-wx 2 user1 user1 4096 Jul 12 18:58 testD
+-rw-rw--w- 1 user1 user1    0 Jul 12 18:58 testf.txt
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ umask
+0004
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ touch /opt/share/user1_file
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user22
+user2@eltex-practice2-v11:~$ touch /opt/share/user2_file
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user3
+This account is currently not available.
+rchownlroot:practice2_groupchowsurs/bin/bashuuser3oup /opt/sharesuso chmod g+rwx
+user3@eltex-practice2-v11:/root$ cd ~.
+user3@eltex-practice2-v11:~$ touch /opt/share/user3_file
+user3@eltex-practice2-v11:~$ exit
+exit
+root@eltex-practice2-v11:~# ls -l /opt/share
+total 0
+-rw-rw--w- 1 user1 practice2_group 0 Jul 12 19:02 user1_file
+-rw-rw-r-- 1 user2 practice2_group 0 Jul 12 19:02 user2_file
+-rw-rw-r-- 1 user3 practice2_group 0 Jul 12 19:04 user3_file
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ rm /opt/share/user2_file
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user2
+user2@eltex-practice2-v11:~$ rm /opt/share/user3_file
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su -s /bin/bash user3
+user3@eltex-practice2-v11:/root$ cd ~
+user3@eltex-practice2-v11:~$ rm /opt/share/user1_file
+user3@eltex-practice2-v11:~$ exit
+exit
+root@eltex-practice2-v11:~# ls -lu/opt/shareuser3
+total 0
+root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# pgrepe-aft"practice2_eltex-v11_part1.log"
+9816 script -a practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# pgrep -af "practice2_eltex-v11_part1.log"pgrep -af "practice2_eltex-v11_part1.log"
+9816 script -a practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# clear
+root@eltex-practice2-v11:~# ls -ld account/
+ls: cannot access 'account/': No such file or directory
+root@eltex-practice2-v11:~# ls -ld account/
+.bash_history		       .cache/			      practice2_eltex-v11_part1.log  .ssh/
+.bashrc			       .lesshst			      .profile			     .viminfo
+root@eltex-practice2-v11:~# ls -ld-practice2_eltex-v11_part1.log
+-rw-r--r-- 1 root root 52811 Jul 12 19:08 practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# sudo chmod +t /opt/share
+root@eltex-practice2-v11:~# ls -ld /opt/share
+drwxrwsr-t 2 root practice2_group 4096 Jul 12 19:08 /opt/share
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ touch file_user1
+user1@eltex-practice2-v11:~$ ls
+file_user1  testD  testf.txt
+user1@eltex-practice2-v11:~$ rm -r file_user1
+user1@eltex-practice2-v11:~$ ls
+testD  testf.txt
+user1@eltex-practice2-v11:~$ cd ..p
+user1@eltex-practice2-v11:/home$ ls
+tech  user1  user2  user3
+user1@eltex-practice2-v11:/home$ cd user1
+user1@eltex-practice2-v11:~$ ls
+testD  testf.txt
+user1@eltex-practice2-v11:~$ ls /opt
+share
+user1@eltex-practice2-v11:~$ touch /opt/share/file_user1
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user2
+user2@eltex-practice2-v11:~$ touch /opt/share/file_user2
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su -s /bin/bash user3
+user3@eltex-practice2-v11:/root$ cd ~.
+user3@eltex-practice2-v11:~$ touch /opt/share/file_user3
+user3@eltex-practice2-v11:~$ exit
+exit
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ ls /opt/share
+file_user1  file_user2	file_user3
+user1@eltex-practice2-v11:~$ ls -ld /opt/share
+drwxrwsr-t 2 root practice2_group 4096 Jul 13 05:00 /opt/share
+user1@eltex-practice2-v11:~$ ls -ld /opt/share
+/opt/share
+user1@eltex-practice2-v11:~$ ls -l//opt/share
+total 0
+-rw-rw--w- 1 user1 practice2_group 0 Jul 13 04:59 file_user1
+-rw-rw-r-- 1 user2 practice2_group 0 Jul 13 05:00 file_user2
+-rw-rw-r-- 1 user3 practice2_group 0 Jul 13 05:00 file_user3
+user1@eltex-practice2-v11:~$ rm -r /opt/share/file_user2
+rm: cannot remove '/opt/share/file_user2': Operation not permitted
+user1@eltex-practice2-v11:~$ rm -r /opt/share/file_user3
+rm: cannot remove '/opt/share/file_user3': Operation not permitted
+user1@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# su - user2
+user2@eltex-practice2-v11:~$ rmm-r /opt/share/file_user3
+rm: cannot remove '/opt/share/file_user3': Operation not permitted
+user2@eltex-practice2-v11:~$ rm -r /opt/share/file_user1
+rm: cannot remove '/opt/share/file_user1': Operation not permitted
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# command -v dmesg
+/usr/bin/dmesg
+root@eltex-practice2-v11:~# sudo dmesgo|-lesstc/sudoers.d/user1-dmesg
+[    0.000000] Linux version 6.8.0-134-generic (buildd@lcy02-amd64-007) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #134-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 26 18:43:11 UTC 2026 (Ubuntu 6.8.0-134.134-generic 6.8.12)
+[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-6.8.0-134-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]	 Intel GenuineIntel
+[    0.000000]	 AMD AuthenticAMD
+[    0.000000]	 Hygon HygonGenuine
+[    0.000000]	 Centaur CentaurHauls
+[    0.000000]	 zhaoxin   Shanghai
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: using sched offset of 467820544001 cycles
+[    0.000002] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000005] tsc: Detected 3399.996 MHz processor
+[    0.000905] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000908] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.116083] AGP: No AGP bridge found
+[    0.116837] last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.116874] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.116878] x86/PAT: Configuration [0-7]: WB	 WC  UC- UC  WB	 WP  UC- WT
+[    0.116924] last_pfn = 0xbffda max_arch_pfn = 0x400000000
+[    0.118488] found SMP MP-table at [mem 0x000f5490-0x000f549f]
+[    0.118762] RAMDISK: [mem 0x2edf1000-0x336effff]
+[    0.119122] ACPI: Early table checksum verification disabled
+[    0.119126] ACPI: RSDP 0x00000000000F5290 000014 (v00 BOCHS )
+[    0.119131] ACPI: RSDT 0x00000000BFFE3B52 000034 (v01 BOCHS	BXPC	 00000001 BXPC 00000001)
+:root@eltex-practice2-v11:~# manovisudo |mless
+VISUDO(8)							    System Manager's Manual							    VISUDO(8)
+
+NAME
+       visudo — edit the sudoers file
+
+SYNOPSIS
+       visudo [-chIOPqsV] [[-f] sudoers]
+
+DESCRIPTION
+       visudo  edits  the  sudoers file in a safe fashion, analogous to vipw(8).  visudo locks the sudoers file against multiple simultaneous edits, performs
+       basic validity checks, and checks for syntax errors before installing the edited file.  If the sudoers file is currently being edited you will receive
+       a message to try again later.
+
+       If the sudoers file does not exist, it will be created unless the editor exits without writing to the file.
+
+       visudo parses the sudoers file after editing and will not save the changes if there is a syntax error.  Upon finding an error,  visudo  will  print  a
+       message stating the line number(s) where the error occurred and the user will receive the “What now?” prompt.  At this point the user may enter ‘e’ to
+       re-edit the sudoers file, ‘x’ to exit without saving the changes, or ‘Q’ to quit and save changes.  The ‘Q’ option should be used with extreme caution
+       because if visudo believes there to be a syntax error, so will sudo.  If ‘e’ is typed to edit the sudoers file after a syntax error has been detected,
+       the cursor will be placed on the line where the error occurred (if the editor supports this feature).
+
+       There are two sudoers settings that determine which editor visudo will run.
+
+       editor	   A  colon  (‘:’)  separated  list  of	 editors  allowed  to  be  used	 with  visudo.	visudo will choose the editor that matches the user's
+		   SUDO_EDITOR, VISUAL, or EDITOR environment variable if possible, or the first editor in the list that exists and is executable.  sudo does
+		   not preserve the SUDO_EDITOR, VISUAL, or EDITOR environment variables unless they are present in the env_keep list or the env_reset option
+		   is disabled in the sudoers file.  The default editor path is /usr/bin/editor which can be set at compile time via the  --with-editor	 con‐
+		   figure option.
+
+       env_editor  If  set,  visudo  will use the value of the SUDO_EDITOR, VISUAL, or EDITOR environment variables before falling back on the default editor
+		   list.  visudo is typically run as root so this option may allow a user with visudo privileges to run arbitrary commands  as	root  without
+		   logging.   An  alternative  is  to  place  a	 colon-separated  list	of  “safe” editors in the editor variable.  visudo will then only use
+		   SUDO_EDITOR, VISUAL, or EDITOR if they match a value specified in editor.  If the env_reset flag  is	 enabled,  the	SUDO_EDITOR,  VISUAL,
+		   and/or  EDITOR  environment	variables must be present in the env_keep list for the env_editor flag to function when visudo is invoked via
+		   sudo.  The default value is on, which can be set at compile time via the --with-env-editor configure option.
+
+       The options are as follows:
+
+       -c, --check
+	       Enable check-only mode.	The existing sudoers file (and any other files it includes) will be checked for syntax errors.	If the	path  to  the
+ Manual page visudo(8) line 1 (press h for help or q to quit) ESCOB		  sudoers  file	 was  not  specified,  visudo will also check the file ownership and permissions (see the -O and -P options).  A message will be
+ Manual page visudo(8) line 2 (press h for help or q to quit) ESCOB		  printed to the standard output describing the status of sudoers unless the -q option was specified.	If  the	 check	completes  successfully,
+ Manual page visudo(8) line 3 (press h for help or q to quit) ESCOB		  visudo will exit with a value of 0.  If an error is encountered, visudo will exit with a value of 1.
+ Manual page visudo(8) line 4 (press h for help or q to quit) ESCOB
+ Manual page visudo(8) line 5 (press h for help or q to quit) ESCOB	  -f sudoers, --file=sudoers
+ Manual page visudo(8) line 6 (press h for help or q to quit) ESCOB		  Specify an alternate sudoers file location, see below.  As of version 1.8.27, the sudoers path can be specified without using the -f option.
+ Manual page visudo(8) line 7 (press h for help or q to quit) ESCOB
+ Manual page visudo(8) line 8 (press h for help or q to quit) ESCOB	  -h, --help
+ Manual page visudo(8) line 9 (press h for help or q to quit) ESCOB		  Display a short help message to the standard output and exit.
+ Manual page visudo(8) line 10 (press h for help or q to quit) ESCOB
+ Manual page visudo(8) line 11 (press h for help or q to quit)root@eltex-practice2-v11:~# sudo visudo -f /etc/sudoers.d/user1-dmesgsudo visudo -f /etc/sudoers.d/user1-dmesg
+BBB[ Reading... ]BB[ Read 0 lines ]BB  GNU nano 7.2							 /etc/sudoers.d/user1-dmesg.tmp								       BB^GB HelpB^OB Write Out	   B^WB Where Is     B^KB CutB^TB ExecuteB^CB Location	   BM-UB UndoBM-AB Set Mark    BM-]B To Bracket	 BM-QB PreviousB^XB ExitB^RB Read File	  B^\B ReplaceB^UB PasteB^JB JustifyB^/B Go To Line   BM-EB RedoBM-6B CopyB^QB Where Was    BM-WB NextB*Buser1 ALL=(root) /usr/bin/dmesgBSave modified buffer?																		    YB YesB NB No  BCB CancelB^GB HelpBM-DB DOS FormatBM-AB AppendBM-BB Backup FileB^CB Cancel	       BM-MB Mac FormatBM-PB PrependB^TB BrowseBFile Name to Write: /etc/sudoers.d/user1-dmesg.tmpB B[ Writing... ]BB BB[ Wrote 1 line ]Broot@eltex-practice2-v11:~# lse/etc/sudoers.d/user1-dmesggggggggggggg
+README	user1-dmesg
+root@eltex-practice2-v11:~# sudo visudo -c
+/etc/sudoers: parsed OK
+/etc/sudoers.d/README: parsed OK
+/etc/sudoers.d/user1-dmesg: bad permissions, should be mode 0440
+root@eltex-practice2-v11:~# chown root:root /etc/sudoers.d/user1-dmesg
+root@eltex-practice2-v11:~# chmod 0440 /etc/sudoers.d/user1-dmesg
+root@eltex-practice2-v11:~# visudo -c
+/etc/sudoers: parsed OK
+/etc/sudoers.d/README: parsed OK
+/etc/sudoers.d/user1-dmesg: parsed OK
+root@eltex-practice2-v11:~# ls -l /etc/sudoers.d/user1-dmesgls -l /etc/sudoers.d/user1-dmesg
+-r--r----- 1 root root 32 Jul 13 05:19 /etc/sudoers.d/user1-dmesg
+root@eltex-practice2-v11:~# stat -c '%a %U:%G' /etc/sudoers.d/user1-dmesgstat -c '%a %U:%G' /etc/sudoers.d/user1-dmesg
+440 root:root
+root@eltex-practice2-v11:~# su - user1
+user1@eltex-practice2-v11:~$ sudo /usr/bin/dmesg
+[sudo] password for user1:
+[    0.000000] Linux version 6.8.0-134-generic (buildd@lcy02-amd64-007) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #134-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 26 18:43:11 UTC 2026 (Ubuntu 6.8.0-134.134-generic 6.8.12)
+[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-6.8.0-134-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]	 Intel GenuineIntel
+[    0.000000]	 AMD AuthenticAMD
+[    0.000000]	 Hygon HygonGenuine
+[    0.000000]	 Centaur CentaurHauls
+[    0.000000]	 zhaoxin   Shanghai
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: using sched offset of 467820544001 cycles
+[    0.000002] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000005] tsc: Detected 3399.996 MHz processor
+[    0.000905] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000908] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.116083] AGP: No AGP bridge found
+[    0.116837] last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.116874] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.116878] x86/PAT: Configuration [0-7]: WB	 WC  UC- UC  WB	 WP  UC- WT
+[    0.116924] last_pfn = 0xbffda max_arch_pfn = 0x400000000
+[    0.118488] found SMP MP-table at [mem 0x000f5490-0x000f549f]
+[    0.118762] RAMDISK: [mem 0x2edf1000-0x336effff]
+[    0.119122] ACPI: Early table checksum verification disabled
+[    0.119126] ACPI: RSDP 0x00000000000F5290 000014 (v00 BOCHS )
+[    0.119131] ACPI: RSDT 0x00000000BFFE3B52 000034 (v01 BOCHS	BXPC	 00000001 BXPC 00000001)
+[    0.119137] ACPI: FACP 0x00000000BFFE396C 000074 (v01 BOCHS	BXPC	 00000001 BXPC 00000001)
+[    0.119141] ACPI: DSDT 0x00000000BFFDF040 00492C (v01 BOCHS	BXPC	 00000001 BXPC 00000001)
+[    0.119143] ACPI: FACS 0x00000000BFFDF000 000040
+[    0.119145] ACPI: APIC 0x00000000BFFE39E0 000080 (v03 BOCHS	BXPC	 00000001 BXPC 00000001)
+[    0.119146] ACPI: SSDT 0x00000000BFFE3A60 0000CA (v01 BOCHS	VMGENID	 00000001 BXPC 00000001)
+[    0.119149] ACPI: WAET 0x00000000BFFE3B2A 000028 (v01 BOCHS	BXPC	 00000001 BXPC 00000001)
+[    0.119150] ACPI: Reserving FACP table memory at [mem 0xbffe396c-0xbffe39df]
+[    0.119151] ACPI: Reserving DSDT table memory at [mem 0xbffdf040-0xbffe396b]
+[    0.119152] ACPI: Reserving FACS table memory at [mem 0xbffdf000-0xbffdf03f]
+[    0.119152] ACPI: Reserving APIC table memory at [mem 0xbffe39e0-0xbffe3a5f]
+[    0.119153] ACPI: Reserving SSDT table memory at [mem 0xbffe3a60-0xbffe3b29]
+[    0.119154] ACPI: Reserving WAET table memory at [mem 0xbffe3b2a-0xbffe3b51]
+[    0.119616] No NUMA configuration found
+[    0.119618] Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+[    0.119625] NODE_DATA(0) allocated [mem 0x13ffd2000-0x13fffcfff]
+[    0.119756] Zone ranges:
+[    0.119756]	 DMA	  [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.119758]	 DMA32	  [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.119759]	 Normal	  [mem 0x0000000100000000-0x000000013fffffff]
+[    0.119760]	 Device	  empty
+[    0.119760] Movable zone start for each node
+[    0.119762] Early memory node ranges
+[    0.119762]	 node	0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.119763]	 node	0: [mem 0x0000000000100000-0x00000000bffd9fff]
+[    0.119764]	 node	0: [mem 0x0000000100000000-0x000000013fffffff]
+[    0.119765] Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+[    0.119875] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.119886] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.125799] On node 0, zone Normal: 38 pages in unavailable ranges
+[    0.127535] ACPI: PM-Timer IO Port: 0x608
+[    0.127546] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.127573] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.127575] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.127576] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.127577] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.127578] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.127579] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.127582] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.127583] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.127600] kvm-guest: APIC: eoi() replaced with kvm_guest_apic_eoi_write()
+[    0.127612] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.127614] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.127615] PM: hibernation: Registered nosave memory: [mem 0xbffda000-0xffffffff]
+[    0.127616] [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.127617] Booting paravirtualized kernel on KVM
+[    0.127619] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.127624] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.127808] percpu: Embedded 86 pages/cpu s229376 r8192 d114688 u1048576
+[    0.127812] pcpu-alloc: s229376 r8192 d114688 u1048576 alloc=1*2097152
+[    0.127814] pcpu-alloc: [0] 0 1
+[    0.127834] kvm-guest: PV spinlocks enabled
+[    0.127836] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.127838] Kernel command line: BOOT_IMAGE=/vmlinuz-6.8.0-134-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.128175] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.128327] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.128348] Fallback order for Node 0: 0
+[    0.128350] Built 1 zonelists, mobility grouping on.	 Total pages: 1031898
+[    0.128351] Policy zone: Normal
+[    0.128354] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.128356] AGP: Checking aperture...
+[    0.215314] AGP: No AGP bridge found
+[    0.216120] software IO TLB: area num 2.
+[    0.230447] Memory: 3925880K/4193760K available (22528K kernel code, 4439K rwdata, 14420K rodata, 4924K init, 4788K bss, 267620K reserved, 0K cma-reserved)
+[    0.249242] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.249331] ftrace: allocating 58301 entries in 228 pages
+[    0.259055] ftrace: allocated 228 pages with 4 groups
+[    0.259754] Dynamic Preempt: voluntary
+[    0.259961] rcu: Preemptible hierarchical RCU implementation.
+[    0.259962] rcu:	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    0.259963]	Trampoline variant of Tasks RCU enabled.
+[    0.259964]	Rude variant of Tasks RCU enabled.
+[    0.259964]	Tracing variant of Tasks RCU enabled.
+[    0.259965] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.259965] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.259974] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.259975] RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.259976] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.262642] NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    0.262834] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.262886] Console: colour dummy device 80x25
+[    0.262888] printk: legacy console [tty0] enabled
+[    0.263122] ACPI: Core revision 20230628
+[    0.263271] APIC: Switch to symmetric I/O mode setup
+[    0.263455] x2apic enabled
+[    0.263698] APIC: Switched APIC routing to: physical x2apic
+[    0.264682] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.264705] tsc: Marking TSC unstable due to TSCs unsynchronized
+[    0.264711] Calibrating delay loop (skipped) preset value.. 6799.99 BogoMIPS (lpj=3399996)
+[    0.264856] process: using AMD E400 aware idle routine
+[    0.264862] Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+[    0.264864] Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+[    0.264868] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.264871] Spectre V2 : Mitigation: Retpolines
+[    0.264873] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    0.264878] x86/fpu: x87 FPU will use FXSAVE
+[    0.285122] Freeing SMP alternatives memory: 48K
+[    0.285127] pid_max: default: 32768 minimum: 301
+[    0.285495] LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+[    0.285612] landlock: Up and running.
+[    0.285614] Yama: becoming mindful.
+[    0.285659] AppArmor: AppArmor initialized
+[    0.285797] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.285803] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.388301] smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+[    0.388610] Performance Events: PMU not available due to virtualization, using software events only.
+[    0.388635] signal: max sigframe size: 1440
+[    0.388676] rcu: Hierarchical SRCU implementation.
+[    0.388679] rcu:	Max phase no-delay instances is 400.
+[    0.388708] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.388708] smp: Bringing up secondary CPUs ...
+[    0.388708] smpboot: x86: Booting SMP configuration:
+[    0.388708] .... node  #0, CPUs:	 #1
+[    0.388745] smp: Brought up 1 node, 2 CPUs
+[    0.388745] smpboot: Max logical packages: 1
+[    0.388747] smpboot: Total of 2 processors activated (13599.98 BogoMIPS)
+[    0.389075] devtmpfs: initialized
+[    0.389075] x86/mm: Memory block size: 128MB
+[    0.389874] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.389874] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.390036] pinctrl core: initialized pinctrl subsystem
+[    0.390193] PM: RTC time: 15:07:51, date: 2026-07-09
+[    0.390885] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.391072] DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+[    0.391103] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.391139] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.391147] audit: initializing netlink subsys (disabled)
+[    0.391171] audit: type=2000 audit(1783609672.659:1): state=initialized audit_enabled=0 res=1
+[    0.391171] thermal_sys: Registered thermal governor 'fair_share'
+[    0.391171] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.391171] thermal_sys: Registered thermal governor 'step_wise'
+[    0.391171] thermal_sys: Registered thermal governor 'user_space'
+[    0.391171] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.391171] cpuidle: using governor ladder
+[    0.391171] cpuidle: using governor menu
+[    0.391171] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.391171] PCI: Using configuration type 1 for base access
+[    0.391764] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.404754] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.404759] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.412848] fbcon: Taking over console
+[    0.412877] ACPI: Added _OSI(Module Device)
+[    0.412882] ACPI: Added _OSI(Processor Device)
+[    0.412886] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.416357] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.416953] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    0.417101] ACPI: Interpreter enabled
+[    0.417118] ACPI: PM: (supports S0 S5)
+[    0.417122] ACPI: Using IOAPIC for interrupt routing
+[    0.417831] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.417837] PCI: Using E820 reservations for host bridge windows
+[    0.418063] ACPI: Enabled 3 GPEs in block 00 to 0F
+[    0.426156] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.426166] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.426173] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.426189] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    0.426845] acpiphp: Slot [3] registered
+[    0.426892] acpiphp: Slot [8] registered
+[    0.426922] acpiphp: Slot [18] registered
+[    0.426993] acpiphp: Slot [4] registered
+[    0.427026] acpiphp: Slot [6] registered
+[    0.427055] acpiphp: Slot [7] registered
+[    0.427082] acpiphp: Slot [9] registered
+[    0.427110] acpiphp: Slot [10] registered
+[    0.427136] acpiphp: Slot [11] registered
+[    0.427164] acpiphp: Slot [12] registered
+[    0.427192] acpiphp: Slot [13] registered
+[    0.427222] acpiphp: Slot [14] registered
+[    0.427249] acpiphp: Slot [15] registered
+[    0.427275] acpiphp: Slot [16] registered
+[    0.427303] acpiphp: Slot [17] registered
+[    0.427331] acpiphp: Slot [19] registered
+[    0.427359] acpiphp: Slot [20] registered
+[    0.427385] acpiphp: Slot [21] registered
+[    0.427415] acpiphp: Slot [22] registered
+[    0.427442] acpiphp: Slot [23] registered
+[    0.427470] acpiphp: Slot [24] registered
+[    0.427497] acpiphp: Slot [25] registered
+[    0.427524] acpiphp: Slot [26] registered
+[    0.427552] acpiphp: Slot [27] registered
+[    0.427579] acpiphp: Slot [28] registered
+[    0.427609] acpiphp: Slot [29] registered
+[    0.427629] PCI host bridge to bus 0000:00
+[    0.427634] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.427640] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.427645] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.427649] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.427654] pci_bus 0000:00: root bus resource [mem 0xc000000000-0xc0a000bfff window]
+[    0.427660] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.427729] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    0.428530] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    0.429357] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+[    0.431773] pci 0000:00:01.1: BAR 4 [io  0xf0e0-0xf0ef]
+[    0.431840] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    0.431846] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    0.431850] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    0.431854] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    0.431854] pci 0000:00:01.2: [8086:7020] type 00 class 0x0c0300 conventional PCI endpoint
+[    0.433771] pci 0000:00:01.2: BAR 4 [io  0xf0c0-0xf0df]
+[    0.435084] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    0.435693] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    0.435710] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    0.436058] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[    0.439771] pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    0.440841] pci 0000:00:02.0: BAR 2 [mem 0xfea50000-0xfea50fff]
+[    0.440908] pci 0000:00:02.0: ROM [mem 0xfea40000-0xfea4ffff pref]
+[    0.440991] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.441477] pci 0000:00:03.0: [1af4:1002] type 00 class 0x00ff00 conventional PCI endpoint
+[    0.445724] pci 0000:00:03.0: BAR 0 [io  0xf000-0xf03f]
+[    0.445743] pci 0000:00:03.0: BAR 1 [mem 0xfea51000-0xfea51fff]
+[    0.445799] pci 0000:00:03.0: BAR 4 [mem 0xc0a0000000-0xc0a0003fff 64bit pref]
+[    0.447866] pci 0000:00:05.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.452724] pci 0000:00:05.0: BAR 0 [mem 0xc000000000-0xc0000000ff 64bit]
+[    0.452755] pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.452798] pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+[    0.452830] pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+[    0.454065] pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.456230] pci 0000:00:08.0: [1af4:1003] type 00 class 0x078000 conventional PCI endpoint
+[    0.458724] pci 0000:00:08.0: BAR 0 [io  0xf040-0xf07f]
+[    0.458750] pci 0000:00:08.0: BAR 1 [mem 0xfea52000-0xfea52fff]
+[    0.458806] pci 0000:00:08.0: BAR 4 [mem 0xc0a0004000-0xc0a0007fff 64bit pref]
+[    0.464344] pci 0000:00:12.0: [1af4:1000] type 00 class 0x020000 conventional PCI endpoint
+[    0.466793] pci 0000:00:12.0: BAR 0 [io  0xf080-0xf0bf]
+[    0.466812] pci 0000:00:12.0: BAR 1 [mem 0xfea53000-0xfea53fff]
+[    0.466866] pci 0000:00:12.0: BAR 4 [mem 0xc0a0008000-0xc0a000bfff 64bit pref]
+[    0.466884] pci 0000:00:12.0: ROM [mem 0xfea00000-0xfea3ffff pref]
+[    0.472930] pci 0000:00:1e.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.474737] pci 0000:00:1e.0: BAR 0 [mem 0xc000001000-0xc0000010ff 64bit]
+[    0.474771] pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.474814] pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+[    0.474845] pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+[    0.476076] pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.477115] pci 0000:00:1f.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.478736] pci 0000:00:1f.0: BAR 0 [mem 0xc000002000-0xc0000020ff 64bit]
+[    0.478768] pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.478812] pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+[    0.478849] pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    0.479723] pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.480968] pci_bus 0000:01: extended config space not accessible
+[    0.481312] acpiphp: Slot [1-2] registered
+[    0.481342] acpiphp: Slot [0] registered
+[    0.481374] acpiphp: Slot [2] registered
+[    0.481407] acpiphp: Slot [3-2] registered
+[    0.481438] acpiphp: Slot [4-2] registered
+[    0.481465] acpiphp: Slot [5] registered
+[    0.481498] acpiphp: Slot [6-2] registered
+[    0.481534] acpiphp: Slot [7-2] registered
+[    0.481565] acpiphp: Slot [8-2] registered
+[    0.481598] acpiphp: Slot [9-2] registered
+[    0.481716] acpiphp: Slot [10-2] registered
+[    0.481747] acpiphp: Slot [11-2] registered
+[    0.481778] acpiphp: Slot [12-2] registered
+[    0.481809] acpiphp: Slot [13-2] registered
+[    0.481839] acpiphp: Slot [14-2] registered
+[    0.481871] acpiphp: Slot [15-2] registered
+[    0.481904] acpiphp: Slot [16-2] registered
+[    0.481936] acpiphp: Slot [17-2] registered
+[    0.481966] acpiphp: Slot [18-2] registered
+[    0.482004] acpiphp: Slot [19-2] registered
+[    0.482037] acpiphp: Slot [20-2] registered
+[    0.482069] acpiphp: Slot [21-2] registered
+[    0.482101] acpiphp: Slot [22-2] registered
+[    0.482137] acpiphp: Slot [23-2] registered
+[    0.482168] acpiphp: Slot [24-2] registered
+[    0.482199] acpiphp: Slot [25-2] registered
+[    0.482230] acpiphp: Slot [26-2] registered
+[    0.482261] acpiphp: Slot [27-2] registered
+[    0.482292] acpiphp: Slot [28-2] registered
+[    0.482326] acpiphp: Slot [29-2] registered
+[    0.482357] acpiphp: Slot [30] registered
+[    0.482385] acpiphp: Slot [31] registered
+[    0.482904] pci 0000:01:01.0: [1af4:1004] type 00 class 0x010000 conventional PCI endpoint
+[    0.487710] pci 0000:01:01.0: BAR 0 [io  0xe000-0xe03f]
+[    0.487730] pci 0000:01:01.0: BAR 1 [mem 0xfe800000-0xfe800fff]
+[    0.487786] pci 0000:01:01.0: BAR 4 [mem 0xc080000000-0xc080003fff 64bit pref]
+[    0.500243] pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.501710] pci_bus 0000:02: extended config space not accessible
+[    0.502059] acpiphp: Slot [0-2] registered
+[    0.502092] acpiphp: Slot [1-3] registered
+[    0.502125] acpiphp: Slot [2-2] registered
+[    0.502164] acpiphp: Slot [3-3] registered
+[    0.502195] acpiphp: Slot [4-3] registered
+[    0.502225] acpiphp: Slot [5-2] registered
+[    0.502257] acpiphp: Slot [6-3] registered
+[    0.502287] acpiphp: Slot [7-3] registered
+[    0.502318] acpiphp: Slot [8-3] registered
+[    0.502348] acpiphp: Slot [9-3] registered
+[    0.502384] acpiphp: Slot [10-3] registered
+[    0.502417] acpiphp: Slot [11-3] registered
+[    0.502448] acpiphp: Slot [12-3] registered
+[    0.502484] acpiphp: Slot [13-3] registered
+[    0.502517] acpiphp: Slot [14-3] registered
+[    0.502548] acpiphp: Slot [15-3] registered
+[    0.502579] acpiphp: Slot [16-3] registered
+[    0.502618] acpiphp: Slot [17-3] registered
+[    0.502650] acpiphp: Slot [18-3] registered
+[    0.502683] acpiphp: Slot [19-3] registered
+[    0.502724] acpiphp: Slot [20-3] registered
+[    0.502759] acpiphp: Slot [21-3] registered
+[    0.502792] acpiphp: Slot [22-3] registered
+[    0.502823] acpiphp: Slot [23-3] registered
+[    0.502858] acpiphp: Slot [24-3] registered
+[    0.502891] acpiphp: Slot [25-3] registered
+[    0.502922] acpiphp: Slot [26-3] registered
+[    0.502955] acpiphp: Slot [27-3] registered
+[    0.502991] acpiphp: Slot [28-3] registered
+[    0.503024] acpiphp: Slot [29-3] registered
+[    0.503057] acpiphp: Slot [30-2] registered
+[    0.503091] acpiphp: Slot [31-2] registered
+[    0.514251] pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.515400] pci_bus 0000:03: extended config space not accessible
+[    0.515932] acpiphp: Slot [0-3] registered
+[    0.515967] acpiphp: Slot [1-4] registered
+[    0.516008] acpiphp: Slot [2-3] registered
+[    0.516041] acpiphp: Slot [3-4] registered
+[    0.516078] acpiphp: Slot [4-4] registered
+[    0.516110] acpiphp: Slot [5-3] registered
+[    0.516143] acpiphp: Slot [6-4] registered
+[    0.516175] acpiphp: Slot [7-4] registered
+[    0.516209] acpiphp: Slot [8-4] registered
+[    0.516240] acpiphp: Slot [9-4] registered
+[    0.516274] acpiphp: Slot [10-4] registered
+[    0.516311] acpiphp: Slot [11-4] registered
+[    0.516346] acpiphp: Slot [12-4] registered
+[    0.516378] acpiphp: Slot [13-4] registered
+[    0.516409] acpiphp: Slot [14-4] registered
+[    0.516442] acpiphp: Slot [15-4] registered
+[    0.516474] acpiphp: Slot [16-4] registered
+[    0.516506] acpiphp: Slot [17-4] registered
+[    0.516540] acpiphp: Slot [18-4] registered
+[    0.516573] acpiphp: Slot [19-4] registered
+[    0.516604] acpiphp: Slot [20-4] registered
+[    0.516636] acpiphp: Slot [21-4] registered
+[    0.516669] acpiphp: Slot [22-4] registered
+[    0.516706] acpiphp: Slot [23-4] registered
+[    0.516740] acpiphp: Slot [24-4] registered
+[    0.516775] acpiphp: Slot [25-4] registered
+[    0.516809] acpiphp: Slot [26-4] registered
+[    0.516846] acpiphp: Slot [27-4] registered
+[    0.516879] acpiphp: Slot [28-4] registered
+[    0.516915] acpiphp: Slot [29-4] registered
+[    0.516947] acpiphp: Slot [30-3] registered
+[    0.516978] acpiphp: Slot [31-3] registered
+[    0.528109] pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.535118] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    0.535305] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.535483] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    0.535655] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.535737] ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+[    0.536149] iommu: Default domain type: Translated
+[    0.536149] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.536805] SCSI subsystem initialized
+[    0.536819] libata version 3.00 loaded.
+[    0.536819] ACPI: bus type USB registered
+[    0.536819] usbcore: registered new interface driver usbfs
+[    0.536819] usbcore: registered new interface driver hub
+[    0.536819] usbcore: registered new device driver usb
+[    0.536819] pps_core: LinuxPPS API ver. 1 registered
+[    0.536819] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.536825] PTP clock support registered
+[    0.536847] EDAC MC: Ver: 3.0.0
+[    0.537962] NetLabel: Initializing
+[    0.537966] NetLabel:  domain hash size = 128
+[    0.537970] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.538141] NetLabel:  unlabeled traffic allowed by default
+[    0.538172] mctp: management component transport protocol core
+[    0.538172] NET: Registered PF_MCTP protocol family
+[    0.538172] PCI: Using ACPI for IRQ routing
+[    0.538172] PCI: pci_cache_line_size set to 64 bytes
+[    0.538811] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.538815] e820: reserve RAM buffer [mem 0xbffda000-0xbfffffff]
+[    0.538842] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.538842] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.538842] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.538842] vgaarb: loaded
+[    0.538842] clocksource: Switched to clocksource kvm-clock
+[    0.539817] VFS: Disk quotas dquot_6.6.0
+[    0.539850] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.540128] AppArmor: AppArmor Filesystem Enabled
+[    0.540151] pnp: PnP ACPI init
+[    0.540261] pnp 00:02: [dma 2]
+[    0.540634] pnp: PnP ACPI: found 4 devices
+[    0.551581] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.551720] NET: Registered PF_INET protocol family
+[    0.551779] IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.566446] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.566463] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.566499] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.566561] TCP bind hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+[    0.566625] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.566693] MPTCP token hash table entries: 4096 (order: 5, 98304 bytes, linear)
+[    0.566730] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.566744] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.566808] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.566819] NET: Registered PF_XDP protocol family
+[    0.566834] pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.566856] pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+[    0.568570] pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+[    0.569897] pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.572084] pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.572103] pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+[    0.573747] pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+[    0.574852] pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.577082] pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.577099] pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+[    0.579164] pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    0.579714] pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.581287] pci_bus 0000:00: resource 4 [io	0x0000-0x0cf7 window]
+[    0.581293] pci_bus 0000:00: resource 5 [io	0x0d00-0xffff window]
+[    0.581298] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.581302] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    0.581306] pci_bus 0000:00: resource 8 [mem 0xc000000000-0xc0a000bfff window]
+[    0.581312] pci_bus 0000:01: resource 0 [io	0xe000-0xefff]
+[    0.581315] pci_bus 0000:01: resource 1 [mem 0xfe800000-0xfe9fffff]
+[    0.581319] pci_bus 0000:01: resource 2 [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.581326] pci_bus 0000:02: resource 0 [io	0xd000-0xdfff]
+[    0.581330] pci_bus 0000:02: resource 1 [mem 0xfe600000-0xfe7fffff]
+[    0.581333] pci_bus 0000:02: resource 2 [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.581338] pci_bus 0000:03: resource 0 [io	0xc000-0xcfff]
+[    0.581342] pci_bus 0000:03: resource 1 [mem 0xfe400000-0xfe5fffff]
+[    0.581347] pci_bus 0000:03: resource 2 [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.581485] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.581505] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.582718] ACPI: \_SB_.LNKD: Enabled at IRQ 11
+[    0.584278] PCI: CLS 0 bytes, default 64
+[    0.584354] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.584359] software IO TLB: mapped [mem 0x00000000bbfda000-0x00000000bffda000] (64MB)
+[    0.584437] Trying to unpack rootfs image as initramfs...
+[    0.585218] Initialise system trusted keyrings
+[    0.585235] Key type blacklist registered
+[    0.586037] workingset: timestamp_bits=36 max_order=20 bucket_order=0
+[    0.586053] zbud: loaded
+[    0.587261] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.587779] fuse: init (API version 7.39)
+[    0.588043] integrity: Platform Keyring initialized
+[    0.588053] integrity: Machine keyring initialized
+[    0.599661] Key type asymmetric registered
+[    0.599671] Asymmetric key parser 'x509' registered
+[    0.599706] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.599801] io scheduler mq-deadline registered
+[    0.601152] shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.S28_)
+[    0.601167] shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.601179] shpchp 0000:00:05.0: Cannot get control of SHPC hotplug
+[    0.601258] shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF0_)
+[    0.601269] shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.601277] shpchp 0000:00:1e.0: Cannot get control of SHPC hotplug
+[    0.601351] shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF8_)
+[    0.601362] shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.601369] shpchp 0000:00:1f.0: Cannot get control of SHPC hotplug
+[    0.601383] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.601570] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.601654] ACPI: button: Power Button [PWRF]
+[    0.603071] ACPI: \_SB_.LNKC: Enabled at IRQ 10
+[    0.608522] ACPI: \_SB_.LNKB: Enabled at IRQ 10
+[    0.611248] ACPI: \_SB_.LNKA: Enabled at IRQ 11
+[    0.616596] Free page reporting enabled
+[    0.617007] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.683257] Linux agpgart interface v0.103
+[    0.690807] loop: module loaded
+[    0.703914] virtio_scsi virtio3: 2/0/0 default/read/poll queues
+[    0.710379] scsi host0: Virtio SCSI HBA
+[    0.714075] scsi 0:0:0:0: Direct-Access     QEMU	QEMU HARDDISK	 2.5+ PQ: 0 ANSI: 5
+[    0.714377] ata_piix 0000:00:01.1: version 2.13
+[    0.718831] scsi host1: ata_piix
+[    0.719995] scsi host2: ata_piix
+[    0.720085] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xf0e0 irq 14 lpm-pol 0
+[    0.720096] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xf0e8 irq 15 lpm-pol 0
+[    0.720479] ACPI: bus type drm_connector registered
+[    0.721048] tun: Universal TUN/TAP device driver, 1.6
+[    0.730009] PPP generic driver version 2.4.2
+[    0.733744] uhci_hcd 0000:00:01.2: UHCI Host Controller
+[    0.734260] uhci_hcd 0000:00:01.2: new USB bus registered, assigned bus number 1
+[    0.736076] uhci_hcd 0000:00:01.2: detected 2 ports
+[    0.736525] uhci_hcd 0000:00:01.2: irq 11, io port 0x0000f0c0
+[    0.737823] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.08
+[    0.737840] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.737846] usb usb1: Product: UHCI Host Controller
+[    0.737850] usb usb1: Manufacturer: Linux 6.8.0-134-generic uhci_hcd
+[    0.737854] usb usb1: SerialNumber: 0000:00:01.2
+[    0.739998] hub 1-0:1.0: USB hub found
+[    0.740050] hub 1-0:1.0: 2 ports detected
+[    0.740343] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    0.750969] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.751018] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.751562] mousedev: PS/2 mouse device common for all mice
+[    0.752186] rtc_cmos 00:03: RTC can wake from S4
+[    0.753984] rtc_cmos 00:03: registered as rtc0
+[    0.754457] rtc_cmos 00:03: setting system clock to 2026-07-09T15:07:52 UTC (1783609672)
+[    0.754567] rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram
+[    0.754581] i2c_dev: i2c /dev entries driver
+[    0.754614] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    0.754643] device-mapper: uevent: version 1.0.3
+[    0.754736] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    0.757342] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[    0.757351] amd_pstate: the _CPC object is not present in SBIOS or ACPI disabled
+[    0.763647] Freeing initrd memory: 74748K
+[    0.763668] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.763923] [drm] Initialized simpledrm 1.0.0 20200625 for simple-framebuffer.0 on minor 0
+[    0.765546] Console: switching to colour frame buffer device 100x37
+[    0.767519] simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+[    0.767671] drop_monitor: Initializing network drop monitor service
+[    0.767834] NET: Registered PF_INET6 protocol family
+[    0.769142] sd 0:0:0:0: Power-on or device reset occurred
+[    0.769286] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    0.769443] sd 0:0:0:0: [sda] 67108864 512-byte logical blocks: (34.4 GB/32.0 GiB)
+[    0.769578] sd 0:0:0:0: [sda] Write Protect is off
+[    0.769629] sd 0:0:0:0: [sda] Mode Sense: 63 00 10 08
+[    0.769743] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    0.773308] Segment Routing with IPv6
+[    0.773369] In-situ OAM (IOAM) with IPv6
+[    0.773443] NET: Registered PF_PACKET protocol family
+[    0.774479] Key type dns_resolver registered
+[    0.775789] IPI shorthand broadcast: enabled
+[    0.777863] sched_clock: Marking stable (776004852, 869351)->(778370226, -1496023)
+[    0.779444] registered taskstats version 1
+[    0.781205] Loading compiled-in X.509 certificates
+[    0.784287] Loaded X.509 cert 'Build time autogenerated kernel key: 79aab6b364387381d7a5d225dcfcd094a654ef62'
+[    0.786782] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+[    0.789247] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    0.791956] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing 2025 Kmod: 4627603d2357a2a3f81006370894c221175893e9'
+[    0.794671] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    0.796289] blacklist: Loading compiled-in revocation X.509 certificates
+[    0.797118] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    0.801628] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    0.805951] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    0.809562] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    0.813498] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    0.816994] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    0.820666] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    0.824297] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    0.836994] Key type .fscrypt registered
+[    0.839148] Key type fscrypt-provisioning registered
+[    0.858975] cryptd: max_cpu_qlen set to 1000
+[    0.872166]	sda: sda1 sda2 sda3
+[    0.874859] sd 0:0:0:0: [sda] Attached SCSI disk
+[    0.883006] ata2: found unknown device (class 0)
+[    0.888302] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    0.894276] scsi 2:0:0:0: CD-ROM	       QEMU	QEMU DVD-ROM	 2.5+ PQ: 0 ANSI: 5
+[    0.914737] sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    0.917120] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    0.927585] sr 2:0:0:0: Attached scsi CD-ROM sr0
+[    0.929098] sr 2:0:0:0: Attached scsi generic sg1 type 5
+[    0.940634] SSE version of gcm_enc/dec engaged.
+[    0.962917] usb 1-1: new full-speed USB device number 2 using uhci_hcd
+[    0.980450] Key type encrypted registered
+[    0.981791] AppArmor: AppArmor sha256 policy hashing enabled
+[    0.983582] ima: No TPM chip found, activating TPM-bypass!
+[    0.986916] Loading compiled-in module X.509 certificates
+[    0.989930] Loaded X.509 cert 'Build time autogenerated kernel key: 79aab6b364387381d7a5d225dcfcd094a654ef62'
+[    0.993387] ima: Allocated hash algorithm: sha256
+[    0.995688] ima: No architecture policies found
+[    0.997294] evm: Initialising EVM extended attributes:
+[    0.998821] evm: security.selinux
+[    1.000457] evm: security.SMACK64
+[    1.001604] evm: security.SMACK64EXEC
+[    1.003670] evm: security.SMACK64TRANSMUTE
+[    1.004712] evm: security.SMACK64MMAP
+[    1.006449] evm: security.apparmor
+[    1.007480] evm: security.ima
+[    1.008322] evm: security.capability
+[    1.009954] evm: HMAC attrs: 0x1
+[    1.011739] PM:   Magic number: 2:338:133
+[    1.013078] acpi device:08: hash matches
+[    1.014882] powernow_k8: Power state transitions not supported
+[    1.015647] powernow_k8: Power state transitions not supported
+[    1.022193] RAS: Correctable Errors collector initialized.
+[    1.025436] clk: Disabling unused clocks
+[    1.030490] Freeing unused decrypted memory: 2028K
+[    1.032327] Freeing unused kernel image (initmem) memory: 4924K
+[    1.033245] Write protecting the kernel read-only data: 38912k
+[    1.035087] Freeing unused kernel image (rodata/data gap) memory: 1964K
+[    1.084533] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.085824] Run /init as init process
+[    1.086778]	 with arguments:
+[    1.086784]	   /init
+[    1.086788]	 with environment:
+[    1.086791]	   HOME=/
+[    1.086792]	   TERM=linux
+[    1.152243] usb 1-1: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+[    1.153021] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=10
+[    1.153785] usb 1-1: Product: QEMU USB Tablet
+[    1.154525] usb 1-1: Manufacturer: QEMU
+[    1.155312] usb 1-1: SerialNumber: 28754-0000:00:01.2-1
+[    1.177442] hid: raw HID events driver (C) Jiri Kosina
+[    1.232268] usbcore: registered new interface driver usbhid
+[    1.233372] usbhid: USB HID core driver
+[    1.238891] input: QEMU QEMU USB Tablet as /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input3
+[    1.242231] hid-generic 0003:0627:0001.0001: input,hidraw0: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:00:01.2-1/input0
+[    1.395565] virtio_net virtio2 ens18: renamed from eth0
+[    1.424386] FDC 0 is a S82078B
+[    1.432295] Console: switching to colour dummy device 80x25
+[    1.436504] bochs-drm 0000:00:02.0: vgaarb: deactivate vga console
+[    1.439298] [drm] Found bochs VGA, ID 0xb0c5.
+[    1.439303] [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfea50000.
+[    1.445225] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input5
+[    1.445933] [drm] Found EDID data blob.
+[    1.448096] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+[    1.453130] [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+[    1.464288] fbcon: bochs-drmdrmfb (fb0) is primary device
+[    1.556681] Console: switching to colour frame buffer device 160x50
+[    1.568926] bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+[    2.055920] random: crng init done
+[    2.849883] raid6: sse2x4   gen() 12895 MB/s
+[    2.866887] raid6: sse2x2   gen()  2885 MB/s
+[    2.883924] raid6: sse2x1   gen()   899 MB/s
+[    2.883964] raid6: using algorithm sse2x4 gen() 12895 MB/s
+[    2.900892] raid6: .... xor() 3919 MB/s, rmw enabled
+[    2.900929] raid6: using ssse3x2 recovery algorithm
+[    2.905304] xor: measuring software checksum speed
+[    2.905530]	  prefetch64-sse  : 16481 MB/sec
+[    2.905773]	  generic_sse	  : 14302 MB/sec
+[    2.905790] xor: using function: prefetch64-sse (16481 MB/sec)
+[    2.907177] async_tx: api initialized (async)
+[    3.156939] Btrfs loaded, zoned=yes, fsverity=yes
+[    3.626531] EXT4-fs (dm-0): mounted filesystem 78dfc1ab-05ce-40b9-a2f8-2f3e03168145 ro with ordered data mode. Quota mode: none.
+[    3.740878] workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[   49.601115] systemd[1]: Inserted module 'autofs4'
+[   49.611877] workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 8 times, consider switching to WQ_UNBOUND
+[   56.469811] systemd[1]: systemd 255.4-1ubuntu8.16 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[   56.473068] systemd[1]: Detected virtualization kvm.
+[   56.473474] systemd[1]: Detected architecture x86-64.
+[   58.258489] systemd[1]: No hostname configured, using default hostname.
+[   58.259091] systemd[1]: Hostname set to <localhost>.
+[  105.730653] systemd[1]: Queued start job for default target graphical.target.
+[  105.882709] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[  105.883695] systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+[  105.885461] systemd[1]: Created slice user.slice - User and Session Slice.
+[  105.886191] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[  105.886851] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[  105.887437] systemd[1]: Expecting device dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.device - /dev/disk/by-uuid/c3f8f018-f5f7-4a5d-92a1-12ee87108672...
+[  105.888315] systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[  105.888933] systemd[1]: Reached target slices.target - Slice Units.
+[  105.889530] systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+[  105.890118] systemd[1]: Reached target snapd.mounts.target - Mounted snaps.
+[  105.890740] systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[  105.891404] systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[  105.892120] systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[  105.892783] systemd[1]: Listening on multipathd.socket - multipathd control socket.
+[  105.893448] systemd[1]: Listening on syslog.socket - Syslog Socket.
+[  105.894493] systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+[  105.895307] systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[  105.895985] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[  105.896657] systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+[  105.897342] systemd[1]: Listening on systemd-networkd.socket - Network Service Netlink Socket.
+[  105.897946] systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[  105.898587] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[  105.899246] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[  105.994877] workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 16 times, consider switching to WQ_UNBOUND
+[  106.022977] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[  106.025006] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[  106.026731] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[  106.028626] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[  106.030903] systemd[1]: Starting systemd-journald.service - Journal Service...
+[  106.049943] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+[  106.051256] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[  106.052268] systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[  106.053284] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+[  106.054279] systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+[  106.055297] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+[  106.056380] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+[  106.057438] systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+[  106.058496] systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+[  106.059160] systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+[  106.059844] systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root).
+[  106.334977] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[  106.336481] systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[  106.339970] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[  106.340784] systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[  106.344996] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[  106.534204] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[  106.538488] systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+[  106.542090] systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+[  106.542532] systemd[1]: Finished modprobe@dm_mod.service - Load Kernel Module dm_mod.
+[  106.543364] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[  106.543763] systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+[  106.546366] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[  106.546783] systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+[  106.547561] systemd[1]: modprobe@loop.service: Deactivated successfully.
+[  106.548328] systemd[1]: Finished modprobe@loop.service - Load Kernel Module loop.
+[  106.549185] systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[  106.550949] systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[  106.553440] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[  106.555493] systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met.
+[  106.557247] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[  106.629760] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[  106.634506] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[  106.635747] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[  106.637537] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[  106.638830] systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[  106.640016] systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+[  106.684626] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[  106.685396] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[  107.335340] EXT4-fs (dm-0): re-mounted 78dfc1ab-05ce-40b9-a2f8-2f3e03168145 r/w.
+[  107.337395] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[  107.347030] systemd[1]: Activating swap swap.img.swap - /swap.img...
+[  107.350948] systemd[1]: Starting multipathd.service - Device-Mapper Multipath Device Controller...
+[  107.366499] systemd-journald[308]: Collecting audit messages is disabled.
+[  107.519297] systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+[  107.519988] systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[  107.527002] systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+[  107.527673] systemd[1]: systemd-tpm2-setup.service - TPM2 SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[  107.528074] systemd[1]: Started systemd-journald.service - Journal Service.
+[  107.705689] systemd-journald[308]: Received client request to flush runtime journal.
+[  108.360844] Adding 3261436k swap on /swap.img.  Priority:-2 extents:7 across:5735424k
+[  109.627878] workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 32 times, consider switching to WQ_UNBOUND
+[  111.617895] systemd-journald[308]: /var/log/journal/560b026a44d3424ea490d29e1a7e2775/system.journal: Journal file uses a different sequence number ID, rotating.
+[  111.617902] systemd-journald[308]: Rotating system journal.
+[  116.532228] piix4_smbus 0000:00:01.3: SMBus Host Controller at 0x700, revision 0
+[  123.147154] EXT4-fs (sda2): mounted filesystem c3f8f018-f5f7-4a5d-92a1-12ee87108672 r/w with ordered data mode. Quota mode: none.
+[  124.985480] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[  124.987342] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[  124.987491] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[  127.220907] audit: type=1400 audit(1783609798.947:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=563 comm="apparmor_parser"
+[  127.220912] audit: type=1400 audit(1783609798.947:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=564 comm="apparmor_parser"
+[  127.220914] audit: type=1400 audit(1783609798.949:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=568 comm="apparmor_parser"
+[  127.220916] audit: type=1400 audit(1783609798.949:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=569 comm="apparmor_parser"
+[  127.220917] audit: type=1400 audit(1783609798.950:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=570 comm="apparmor_parser"
+[  127.220918] audit: type=1400 audit(1783609798.951:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=571 comm="apparmor_parser"
+[  127.273803] audit: type=1400 audit(1783609799.019:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=572 comm="apparmor_parser"
+[  127.273807] audit: type=1400 audit(1783609799.019:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=573 comm="apparmor_parser"
+[  127.340468] audit: type=1400 audit(1783609799.086:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=574 comm="apparmor_parser"
+[  127.340509] audit: type=1400 audit(1783609799.086:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-checkns" pid=575 comm="apparmor_parser"
+[  129.062878] workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 64 times, consider switching to WQ_UNBOUND
+[  154.947585] NET: Registered PF_QIPCRTR protocol family
+[  155.300402] loop0: detected capacity change from 0 to 8
+[  157.110131] kauditd_printk_skb: 110 callbacks suppressed
+[  157.110134] audit: type=1400 audit(1783609828.855:122): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=837 comm="apparmor_parser"
+[  157.116345] audit: type=1400 audit(1783609828.861:123): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=837 comm="apparmor_parser"
+[53868.716131] audit: type=1400 audit(1783663541.964:124): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.140556524473776" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.716136] audit: type=1400 audit(1783663541.964:125): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.124061521983280" pid=2701 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.717641] audit: type=1400 audit(1783663541.965:126): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/log.cpython-312.pyc.140556529170816" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.720759] audit: type=1400 audit(1783663541.969:127): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/apt.cpython-312.pyc.124061522157040" pid=2701 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.723509] audit: type=1400 audit(1783663541.971:128): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/defaults.cpython-312.pyc.140556523362352" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.724128] audit: type=1400 audit(1783663541.972:129): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/secret_manager.cpython-312.pyc.140556523362352" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.727809] audit: type=1400 audit(1783663541.976:130): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/system.cpython-312.pyc.140556523364400" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.735304] audit: type=1400 audit(1783663541.983:131): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/exceptions.cpython-312.pyc.140556523793968" pid=2702 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.751206] audit: type=1400 audit(1783663541.999:132): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/event_logger.cpython-312.pyc.124061520336944" pid=2701 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[53868.752859] audit: type=1400 audit(1783663542.001:133): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/yaml.cpython-312.pyc.124061509634224" pid=2701 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.127937] kauditd_printk_skb: 89 callbacks suppressed
+[131177.127940] audit: type=1400 audit(1783740851.788:223): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.123610374272816" pid=5164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.133173] audit: type=1400 audit(1783740851.794:224): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/apt.cpython-312.pyc.123610374446576" pid=5164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.149865] audit: type=1400 audit(1783740851.810:225): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.134729940618672" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.150761] audit: type=1400 audit(1783740851.811:226): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/log.cpython-312.pyc.134729942153600" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.156376] audit: type=1400 audit(1783740851.817:227): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/defaults.cpython-312.pyc.134729939523632" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.156659] audit: type=1400 audit(1783740851.817:228): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/secret_manager.cpython-312.pyc.134729939523632" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.160255] audit: type=1400 audit(1783740851.821:229): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/system.cpython-312.pyc.134729939525680" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.165626] audit: type=1400 audit(1783740851.826:230): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/event_logger.cpython-312.pyc.123610372626480" pid=5164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.166952] audit: type=1400 audit(1783740851.828:231): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/yaml.cpython-312.pyc.123610362611888" pid=5164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[131177.167647] audit: type=1400 audit(1783740851.828:232): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/exceptions.cpython-312.pyc.134729939889712" pid=5165 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.188819] kauditd_printk_skb: 89 callbacks suppressed
+[239715.188821] audit: type=1400 audit(1783849391.773:322): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.124890702346032" pid=8163 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.190342] audit: type=1400 audit(1783849391.777:323): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/apt.cpython-312.pyc.124890702519792" pid=8163 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.198446] audit: type=1400 audit(1783849391.785:324): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.126813504425392" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.199337] audit: type=1400 audit(1783849391.786:325): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/log.cpython-312.pyc.126813505960320" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.205105] audit: type=1400 audit(1783849391.792:326): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/defaults.cpython-312.pyc.126813503330352" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.205401] audit: type=1400 audit(1783849391.792:327): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/secret_manager.cpython-312.pyc.126813503330352" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.208917] audit: type=1400 audit(1783849391.796:328): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/system.cpython-312.pyc.126813503332400" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.216139] audit: type=1400 audit(1783849391.803:329): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/exceptions.cpython-312.pyc.126813503696432" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.220855] audit: type=1400 audit(1783849391.808:330): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/messages/__pycache__/__init__.cpython-312.pyc.126813502569776" pid=8164 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[239715.220875] audit: type=1400 audit(1783849391.808:331): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/event_logger.cpython-312.pyc.124890697553968" pid=8163 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+user1@eltex-practice2-v11:~$ exit /usr/bin/dmesg
+logout
+root@eltex-practice2-v11:~# clear
+root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# root@eltex-practice2-v11:~# nano  /usr/local/bin/suid-test.sh
+BBB[ New File ]BB  GNU nano 7.2							       /usr/local/bin/suid-test.sh								   BB^GB HelpB^OB Write Out    B^WB Where Is	 B^KB CutB^TB ExecuteB^CB Location     BM-UB UndoBM-AB Set Mark	   BM-]B To Bracket  BM-QB PreviousB^XB ExitB^RB Read File    B^\B ReplaceB^UB PasteB^JB JustifyB^/B Go To Line	  BM-EB RedoBM-6B CopyB^QB Where Was	BM-WB NextB*B#B!BbBi/BbBiBnB/BbBaBsBhBexecB /usr/bin/dmesgBSave modified buffer?																	      YB YesB NB No  BCB CancelB^GB HelpBM-DB DOS FormatBM-AB AppendBM-BB Backup FileB^CB Cancel	 BM-MB Mac FormatBM-PB PrependB^TB BrowseBFile Name to Write: /usr/local/bin/suid-test.shB B[ Writing... ]BB BB[ Wrote 3 lines ]Broot@eltex-practice2-v11:~# ls
+practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# nanon /usr/local/bin/suid-test.shstatr-ce'%a %U:%G' /etc/sudoers.d/user1-dmesgstat -c '%a %U:%G' /etc/sudoers.d/user1-dmesgls -llss-lo/etc/sudoers.d/user1-dmesgstat -c '%a %U:%G'nanor /usr/local/bin/suid-test.shls-ld//usr/local/bin/suid-test.sh
+-rw-r--r-- 1 root root 33 Jul 13 05:42 /usr/local/bin/suid-test.sh
+root@eltex-practice2-v11:~# chmod 47555/usr/local/bin/suid-test.sh
+root@eltex-practice2-v11:~# chmod 4755 /usr/local/bin/suid-test.shls -nano  /usr/local/bin/suid-test.shstatr-c '%a %U:%G' /etc/sudoers.d/user1-dmesgls -lchmodo0440 /etc/sudoers.d/user1-dmesgown root:rootsudoevisudoo-fs/etc/sudoers.d/user1-dmesgsum-auser2 dmesgs
+user2@eltex-practice2-v11:~$ /usr/local/bin/suid-test.sh
+dmesg: read kernel buffer failed: Operation not permitted
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# chmodu4755 /usr/local/bin/suid-test.shls -ld -ld /usr/local/bin/suid-test.shchmod 4755chmodu4755 /usr/local/bin/suid-test.shls -nano  /usr/local/bin/suid-test.sh
+BBB[ Reading... ]BB[ Read 3 lines ]BB  GNU nano 7.2							   /usr/local/bin/suid-test.sh								       BB^GB HelpB^OB Write Out	   B^WB Where Is     B^KB CutB^TB ExecuteB^CB Location	   BM-UB UndoBM-AB Set Mark    BM-]B To Bracket	 BM-QB PreviousB^XB ExitB^RB Read File	  B^\B ReplaceB^UB PasteB^JB JustifyB^/B Go To Line   BM-EB RedoBM-6B CopyB^QB Where Was    BM-WB Next#!/bin/bashexecB /usr/bin/dmesgB*BifBidgreBgrepB greBgrepB B'^Uid:B B'^Uid:'B B"/proc/$B$$B/statusB"/proc/$$/status"BBSave modified buffer?																	       YB YesB NB No  BCB CancelB^GB HelpBM-DB DOS FormatBM-AB AppendBM-BB Backup FileB^CB Cancel	  BM-MB Mac FormatBM-PB PrependB^TB BrowseBFile Name to Write: /usr/local/bin/suid-test.shB B[ Writing... ]BB BB[ Wrote 7 lines ]Broot@eltex-practice2-v11:~# nano  /usr/local/bin/suid-test.shsu - user2
+user2@eltex-practice2-v11:~$ /usr/local/bin/suid-test.sh
+uid=1002(user2) gid=1002(user2) groups=1002(user2),100(users),1004(practice2_group)
+Uid:	1002	1002	1002	1002
+dmesg: read kernel buffer failed: Operation not permitted
+user2@eltex-practice2-v11:~$ ls -l /usr/local/bin/suid-test.shls -l /usr/local/bin/suid-test.sh
+-rwsr-xr-x 1 root root 69 Jul 13 05:45 /usr/local/bin/suid-test.sh
+user2@eltex-practice2-v11:~$ echo s показывает что SUID установлен, однако при выводе uid видим что значения пренадлежат user2, т.е. скрипт не получил праванroot
+s показывает что SUID установлен, однако при выводе uid видим что значения пренадлежат user2, т.е. скрипт не получил права root
+user2@eltex-practice2-v11:~$ echo дать доступ к dmesg через Bash-скрипт сеSUID технически невыполнимо в Linux. Это так работает из соображений безопасности, чтобы  не произошла подмена файла
+дать доступ к dmesg через Bash-скрипт с SUID технически невыполнимо в Linux. Это так работает из соображений безопасности, чтобы не произошла подмена файла
+user2@eltex-practice2-v11:~$ getent shadow user1
+user2@eltex-practice2-v11:~$ exit
+logout
+root@eltex-practice2-v11:~# getent/shadowcuser1n/suid-test.sh
+user1:$y$j9T$6126aWczazE2Y17xb9AKG1$hULRwk3deJFRtHwtJaDyKLNp0208yKDWUZLqexqBvO9:20646:0:99999:7:::
+root@eltex-practice2-v11:~# chage -M 10 user1
+root@eltex-practice2-v11:~# getent-shadowser1
+user1:$y$j9T$6126aWczazE2Y17xb9AKG1$hULRwk3deJFRtHwtJaDyKLNp0208yKDWUZLqexqBvO9:20646:0:10:7:::
+root@eltex-practice2-v11:~# getent shadow user2
+user2:$y$j9T$8tCtnG/u2f9P/d2Ygzp/e0$M8zAsYRJWs06UqTwd18Q8jwksLCxztEsAoTfbbat1a0:20646:0:99999:7:::
+root@eltex-practice2-v11:~# getent shadow user3
+user3:$y$j9T$TYiToVAMQIeiBDaYZXZY70$619JfZa1Z0JAXLPjtuq7pqDNHQFeL9fuTLhlmlAXXpB:20646:0:99999:7:::
+root@eltex-practice2-v11:~# chaget-Mh12ow user1
+root@eltex-practice2-v11:~# chage -M 10 user3
+root@eltex-practice2-v11:~# getent-shadowsuser3
+user3:$y$j9T$TYiToVAMQIeiBDaYZXZY70$619JfZa1Z0JAXLPjtuq7pqDNHQFeL9fuTLhlmlAXXpB:20646:0:10:7:::
+root@eltex-practice2-vgetentcshadowMuser2 user3
+user2:$y$j9T$8tCtnG/u2f9P/d2Ygzp/e0$M8zAsYRJWs06UqTwd18Q8jwksLCxztEsAoTfbbat1a0:20646:0:10:7:::
+root@eltex-practice2-v11:~# ls -ld /etc/motd
+ls: cannot access '/etc/motd': No such file or directory
+root@eltex-practice2-v11:~# nano /etc/motd
+BBB[ New File ]BB  GNU nano 7.2									/etc/motd									   BB^GB HelpB^OB Write Out    B^WB Where Is	 B^KB CutB^TB ExecuteB^CB Location     BM-UB UndoBM-AB Set Mark	   BM-]B To Bracket  BM-QB PreviousB^XB ExitB^RB Read File    B^\B ReplaceB^UB PasteB^JB JustifyB^/B Go To Line	  BM-EB RedoBM-6B CopyB^QB Where Was	BM-WB NextB*BГерасимов СергейBSave modified buffer?																		 YB YesB NB No	BCB CancelB^GB HelpBM-DB DOS FormatBM-AB AppendBM-BB Backup FileB^CB Cancel	    BM-MB Mac FormatBM-PB PrependB^TB BrowseBFile Name to Write: /etc/motdB B[ Writing... ]BB BB[ Wrote 1 line ]Broot@eltex-practice2-v11:~# ls
+practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# ls /etc/motd
+/etc/motd
+root@eltex-practice2-v11:~# ls /etc/motd
+adduser.conf		       dbus-1	       hosts.allow	lsb-release	     os-release	       rmt		  sysctl.d
+alternatives		       debconf.conf    hosts.deny	lvm		     overlayroot.conf  rpc		  sysstat
+apparmor		       debian_version  init.d		machine-id	     PackageKit	       rsyslog.conf	  systemd
+apparmor.d		       default	       initramfs-tools	magic		     pam.conf	       rsyslog.d	  terminfo
+apport			       deluser.conf    inputrc		magic.mime	     pam.d	       screenrc		  thermald
+apt			       depmod.d	       iproute2		manpath.config	     passwd	       security		  timezone
+bash.bashrc		       dhcp	       iscsi		mdadm		     passwd-	       selinux		  tmpfiles.d
+bash_completion		       dhcpcd.conf     issue		mime.types	     perl	       sensors3.conf	  ubuntu-advantage
+bash_completion.d	       dpkg	       issue.net	mke2fs.conf	     pki	       sensors.d	  ucf.conf
+bindresvport.blacklist	       e2scrub.conf    kernel		ModemManager	     plymouth	       services		  udev
+binfmt.d		       environment     landscape	modprobe.d	     pm		       sgml		  udisks2
+byobu			       ethertypes      ldap		modules		     polkit-1	       shadow		  ufw
+ca-certificates		       fonts	       ld.so.cache	modules-load.d	     pollinate	       shadow-		  update-manager
+ca-certificates.conf	       fstab	       ld.so.conf	motd		     profile	       shells		  update-motd.d
+ca-certificates.conf.dpkg-old  fuse.conf       ld.so.conf.d	mtab		     profile.d	       skel		  update-notifier
+cloud			       fwupd	       legal		multipath	     protocols	       sos		  UPower
+console-setup		       gai.conf	       libaudit.conf	multipath.conf	     python3	       ssh		  usb_modeswitch.conf
+credstore		       gnutls	       libblockdev	nanorc		     python3.12	       ssl		  usb_modeswitch.d
+credstore.encrypted	       groff	       libibverbs.d	needrestart	     qemu	       subgid		  vconsole.conf
+cron.d			       group	       libnl-3		netconfig	     rc0.d	       subgid-		  vim
+cron.daily		       group-	       locale.alias	netplan		     rc1.d	       subuid		  vmware-tools
+cron.hourly		       grub.d	       locale.conf	network		     rc2.d	       subuid-		  vtrgb
+cron.monthly		       gshadow	       locale.gen	networkd-dispatcher  rc3.d	       sudo.conf	  wgetrc
+crontab			       gshadow-	       localtime	networks	     rc4.d	       sudoers		  X11
+cron.weekly		       gss	       logcheck		newt		     rc5.d	       sudoers.d	  xattr.conf
+cron.yearly		       hdparm.conf     login.defs	nftables.conf	     rc6.d	       sudo_logsrvd.conf  xdg
+cryptsetup-initramfs	       host.conf       logrotate.conf	nsswitch.conf	     rcS.d	       supercat		  xml
+crypttab		       hosts	       logrotate.d	opt		     resolv.conf       sysctl.conf	  zsh_command_not_found
+root@eltex-practice2-v11:~# cat /etc/motd
+Герасимов Сергей
+root@eltex-practice2-v11:~# rsync -a /etc/ /root/etc_backup/
+root@eltex-practice2-v11:~# ls -ld /root/etc_backup/
+drwxr-xr-x 109 root root 4096 Jul 13 05:55 /root/etc_backup/
+root@eltex-practice2-v11:~# ls /root/etc_backup/
+adduser.conf		       dbus-1	       hosts.allow	lsb-release	     os-release	       rmt		  sysctl.d
+alternatives		       debconf.conf    hosts.deny	lvm		     overlayroot.conf  rpc		  sysstat
+apparmor		       debian_version  init.d		machine-id	     PackageKit	       rsyslog.conf	  systemd
+apparmor.d		       default	       initramfs-tools	magic		     pam.conf	       rsyslog.d	  terminfo
+apport			       deluser.conf    inputrc		magic.mime	     pam.d	       screenrc		  thermald
+apt			       depmod.d	       iproute2		manpath.config	     passwd	       security		  timezone
+bash.bashrc		       dhcp	       iscsi		mdadm		     passwd-	       selinux		  tmpfiles.d
+bash_completion		       dhcpcd.conf     issue		mime.types	     perl	       sensors3.conf	  ubuntu-advantage
+bash_completion.d	       dpkg	       issue.net	mke2fs.conf	     pki	       sensors.d	  ucf.conf
+bindresvport.blacklist	       e2scrub.conf    kernel		ModemManager	     plymouth	       services		  udev
+binfmt.d		       environment     landscape	modprobe.d	     pm		       sgml		  udisks2
+byobu			       ethertypes      ldap		modules		     polkit-1	       shadow		  ufw
+ca-certificates		       fonts	       ld.so.cache	modules-load.d	     pollinate	       shadow-		  update-manager
+ca-certificates.conf	       fstab	       ld.so.conf	motd		     profile	       shells		  update-motd.d
+ca-certificates.conf.dpkg-old  fuse.conf       ld.so.conf.d	mtab		     profile.d	       skel		  update-notifier
+cloud			       fwupd	       legal		multipath	     protocols	       sos		  UPower
+console-setup		       gai.conf	       libaudit.conf	multipath.conf	     python3	       ssh		  usb_modeswitch.conf
+credstore		       gnutls	       libblockdev	nanorc		     python3.12	       ssl		  usb_modeswitch.d
+credstore.encrypted	       groff	       libibverbs.d	needrestart	     qemu	       subgid		  vconsole.conf
+cron.d			       group	       libnl-3		netconfig	     rc0.d	       subgid-		  vim
+cron.daily		       group-	       locale.alias	netplan		     rc1.d	       subuid		  vmware-tools
+cron.hourly		       grub.d	       locale.conf	network		     rc2.d	       subuid-		  vtrgb
+cron.monthly		       gshadow	       locale.gen	networkd-dispatcher  rc3.d	       sudo.conf	  wgetrc
+crontab			       gshadow-	       localtime	networks	     rc4.d	       sudoers		  X11
+cron.weekly		       gss	       logcheck		newt		     rc5.d	       sudoers.d	  xattr.conf
+cron.yearly		       hdparm.conf     login.defs	nftables.conf	     rc6.d	       sudo_logsrvd.conf  xdg
+cryptsetup-initramfs	       host.conf       logrotate.conf	nsswitch.conf	     rcS.d	       supercat		  xml
+crypttab		       hosts	       logrotate.d	opt		     resolv.conf       sysctl.conf	  zsh_command_not_found
+root@eltex-practice2-v11:~# rcync -a --dry-run /etc/ /root/etc_backup/
+Command 'rcync' not found, did you mean:
+  command 'rsync' from snap rsync (1.0.0)
+  command 'rsync' from deb rsync (3.2.7-1ubuntu1.5)
+See 'snap info <snapname>' for additional versions.
+root@eltex-practice2-v11:~# rsync -a --dry-run /etc/ /root/etc_backup/
+root@eltex-practice2-v11:~# rsync -a --dry-run /etc/ /root/etc_backup/lsк
+etc_backup  practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# tar -cf etc_backup.tar -C /root/etc_backup/
+tar: Cowardly refusing to create an empty archive
+Try 'tar --help' or 'tar --usage' for more information.
+root@eltex-practice2-v11:~# tar -cf etc_backup.tar -C /root/etc_backup/.
+root@eltex-practice2-v11:~# ды
+ды: command not found
+root@eltex-practice2-v11:~# ls
+etc_backup  etc_backup.tar  practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# tar -tf etc_backup.tar | head
+./
+./rc4.d/
+./rc4.d/S01uuidd
+./rc4.d/S01grub-common
+./rc4.d/S01rsync
+./rc4.d/S01plymouth
+./rc4.d/S01dbus
+./rc4.d/S01sysstat
+./rc4.d/S01console-setup.sh
+./rc4.d/S01open-vm-tools
+root@eltex-practice2-v11:~# gzip--k -9cetc_backup.tarhead
+root@eltex-practice2-v11:~# bzip -k -9 etc_backup.tar
+Command 'bzip' not found, but there are 21 similar ones.
+root@eltex-practice2-v11:~# bzip2-k -9 etc_backup.tar
+Command 'bzip2' not found, but can be installed with:
+apt install bzip2
+root@eltex-practice2-v11:~# apt install bzip2
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+Suggested packages:
+  bzip2-doc
+The following NEW packages will be installed:
+  bzip2
+0 upgraded, 1 newly installed, 0 to remove and 81 not upgraded.
+Need to get 34.5 kB of archives.
+After this operation, 112 kB of additional disk space will be used.
+0% [Working]		Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 bzip2 amd64 1.0.8-5.1build0.1 [34.5 kB]
+27% [1 bzip2 11.8 kB/34.5 kB 34%]				  100% [Working]	      Fetched 34.5 kB in 0s (114 kB/s)
+
+Selecting previously unselected package bzip2.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125636 files and directories currently installed.)
+Preparing to unpack .../bzip2_1.0.8-5.1build0.1_amd64.deb ...
+Progress: [  0%] [............................................................................................................................................] Progress: [ 20%] [############################................................................................................................................] Unpacking bzip2 (1.0.8-5.1build0.1) ...
+Progress: [ 40%] [########################################################....................................................................................] Setting up bzip2 (1.0.8-5.1build0.1) ...
+Progress: [ 60%] [####################################################################################........................................................] Progress: [ 80%] [################################################################################################################............................] Processing triggers for man-db (2.12.0-4build2) ...
+
+Scanning processes... [																		 ]Scanning processes... [=																	   ]Scanning processes... [==																	     ]Scanning processes... [===																       ]Scanning processes... [====																	 ]Scanning processes... [======																	   ]Scanning processes... [=======																     ]Scanning processes... [========																       ]Scanning processes... [=========																 ]Scanning processes... [==========																   ]Scanning processes... [============																     ]Scanning processes... [=============															       ]Scanning processes... [==============																 ]Scanning processes... [===============															   ]Scanning processes... [=================															     ]Scanning processes... [==================															       ]Scanning processes... [===================															 ]Scanning processes... [====================															   ]Scanning processes... [=====================														     ]Scanning processes... [=======================														       ]Scanning processes... [========================															 ]Scanning processes... [=========================														   ]Scanning processes... [==========================														     ]Scanning processes... [============================													       ]Scanning processes... [=============================														 ]Scanning processes... [==============================														   ]Scanning processes... [===============================													     ]Scanning processes... [================================													       ]Scanning processes... [==================================													 ]Scanning processes... [===================================													   ]Scanning processes... [====================================													     ]Scanning processes... [=====================================												       ]Scanning processes... [=======================================													 ]Scanning processes... [========================================												   ]Scanning processes... [=========================================												     ]Scanning processes... [==========================================												       ]Scanning processes... [===========================================												 ]Scanning processes... [=============================================												   ]Scanning processes... [==============================================											     ]Scanning processes... [===============================================											       ]Scanning processes... [================================================												 ]Scanning processes... [==================================================											   ]Scanning processes... [===================================================											     ]Scanning processes... [====================================================										       ]Scanning processes... [=====================================================											 ]Scanning processes... [======================================================											   ]Scanning processes... [========================================================										     ]Scanning processes... [=========================================================										       ]Scanning processes... [==========================================================										 ]Scanning processes... [===========================================================										   ]Scanning processes... [=============================================================									     ]Scanning processes... [==============================================================									       ]Scanning processes... [===============================================================										 ]Scanning processes... [================================================================									   ]Scanning processes... [=================================================================									     ]Scanning processes... [===================================================================								       ]Scanning processes... [====================================================================									 ]Scanning processes... [=====================================================================									   ]Scanning processes... [======================================================================								     ]Scanning processes... [========================================================================								       ]Scanning processes... [=========================================================================								 ]Scanning processes... [==========================================================================								   ]Scanning processes... [===========================================================================								     ]Scanning processes... [============================================================================							       ]Scanning processes... [==============================================================================								 ]Scanning processes... [===============================================================================							   ]Scanning processes... [================================================================================							     ]Scanning processes... [=================================================================================							       ]Scanning processes... [===================================================================================							 ]Scanning processes... [====================================================================================							   ]Scanning processes... [=====================================================================================						     ]Scanning processes... [======================================================================================						       ]Scanning processes... [=======================================================================================							 ]Scanning processes... [=========================================================================================						   ]Scanning processes... [==========================================================================================						     ]Scanning processes... [===========================================================================================					       ]Scanning processes... [============================================================================================						 ]Scanning processes... [==============================================================================================						   ]Scanning processes... [===============================================================================================					     ]Scanning processes... [================================================================================================					       ]Scanning processes... [=================================================================================================					 ]Scanning processes... [==================================================================================================					   ]Scanning processes... [====================================================================================================					     ]Scanning processes... [=====================================================================================================				       ]Scanning processes... [======================================================================================================					 ]Scanning processes... [=======================================================================================================				   ]Scanning processes... [=========================================================================================================				     ]Scanning processes... [==========================================================================================================				       ]Scanning processes... [===========================================================================================================				 ]Scanning processes... [============================================================================================================				   ]Scanning processes... [=============================================================================================================			     ]Scanning processes... [===============================================================================================================			       ]Scanning processes... [================================================================================================================				 ]Scanning processes... [=================================================================================================================			   ]Scanning processes... [==================================================================================================================			     ]Scanning processes... [====================================================================================================================		       ]Scanning processes... [=====================================================================================================================			 ]Scanning processes... [======================================================================================================================			   ]Scanning processes... [=======================================================================================================================		     ]Scanning processes... [========================================================================================================================		       ]Scanning processes... [==========================================================================================================================		 ]Scanning processes... [===========================================================================================================================		   ]Scanning processes... [============================================================================================================================		     ]Scanning processes... [=============================================================================================================================	       ]Scanning processes... [===============================================================================================================================		 ]Scanning processes... [================================================================================================================================	   ]Scanning processes... [=================================================================================================================================	     ]Scanning processes... [==================================================================================================================================	       ]Scanning processes... [===================================================================================================================================	 ]Scanning processes... [=====================================================================================================================================	   ]Scanning processes... [======================================================================================================================================    ]Scanning processes... [=======================================================================================================================================   ]Scanning processes... [========================================================================================================================================	 ]Scanning processes... [==========================================================================================================================================]Scanning processes...
+Scanning linux images... [																	 ]Scanning linux images... [=================================													   ]Scanning linux images... [===================================================================								     ]Scanning linux images... [=====================================================================================================				       ]Scanning linux images... [=======================================================================================================================================]Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-v11:~# bzip2n-ka-9 etc_backup.tar
+root@eltex-practice2-v11:~# 7z a -t7z -mx=9 etc_backup.tar.7z etc_backup.tar
+Command '7z' not found, but can be installed with:
+apt install 7zip	# version 23.01+dfsg-7, or
+apt install p7zip-full	# version 16.02+dfsg-8
+root@eltex-practice2-v11:~# apt install 7zip
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+Suggested packages:
+  7zip-standalone 7zip-rar
+The following NEW packages will be installed:
+  7zip
+0 upgraded, 1 newly installed, 0 to remove and 81 not upgraded.
+Need to get 1,846 kB of archives.
+After this operation, 6,306 kB of additional disk space will be used.
+0% [Working]		Get:1 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 7zip amd64 23.01+dfsg-11 [1,846 kB]
+0% [1 7zip 10.5 kB/1,846 kB 1%]				      100% [Working]		  Fetched 1,846 kB in 0s (3,776 kB/s)
+
+Selecting previously unselected package 7zip.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125663 files and directories currently installed.)
+Preparing to unpack .../7zip_23.01+dfsg-11_amd64.deb ...
+Progress: [  0%] [............................................................................................................................................] Progress: [ 20%] [############################................................................................................................................] Unpacking 7zip (23.01+dfsg-11) ...
+Progress: [ 40%] [########################################################....................................................................................] Setting up 7zip (23.01+dfsg-11) ...
+Progress: [ 60%] [####################################################################################........................................................] Progress: [ 80%] [################################################################################################################............................] Processing triggers for man-db (2.12.0-4build2) ...
+
+Scanning processes... [																		 ]Scanning processes... [=																	   ]Scanning processes... [==																	     ]Scanning processes... [===																       ]Scanning processes... [====																	 ]Scanning processes... [======																	   ]Scanning processes... [=======																     ]Scanning processes... [========																       ]Scanning processes... [=========																 ]Scanning processes... [==========																   ]Scanning processes... [============																     ]Scanning processes... [=============															       ]Scanning processes... [==============																 ]Scanning processes... [===============															   ]Scanning processes... [================															     ]Scanning processes... [==================															       ]Scanning processes... [===================															 ]Scanning processes... [====================															   ]Scanning processes... [=====================														     ]Scanning processes... [=======================														       ]Scanning processes... [========================															 ]Scanning processes... [=========================														   ]Scanning processes... [==========================														     ]Scanning processes... [===========================													       ]Scanning processes... [=============================														 ]Scanning processes... [==============================														   ]Scanning processes... [===============================													     ]Scanning processes... [================================													       ]Scanning processes... [=================================													 ]Scanning processes... [===================================													   ]Scanning processes... [====================================													     ]Scanning processes... [=====================================												       ]Scanning processes... [======================================													 ]Scanning processes... [=======================================												   ]Scanning processes... [=========================================												     ]Scanning processes... [==========================================												       ]Scanning processes... [===========================================												 ]Scanning processes... [============================================												   ]Scanning processes... [==============================================											     ]Scanning processes... [===============================================											       ]Scanning processes... [================================================												 ]Scanning processes... [=================================================											   ]Scanning processes... [==================================================											     ]Scanning processes... [====================================================										       ]Scanning processes... [=====================================================											 ]Scanning processes... [======================================================											   ]Scanning processes... [=======================================================										     ]Scanning processes... [========================================================										       ]Scanning processes... [==========================================================										 ]Scanning processes... [===========================================================										   ]Scanning processes... [============================================================										     ]Scanning processes... [=============================================================									       ]Scanning processes... [==============================================================										 ]Scanning processes... [================================================================									   ]Scanning processes... [=================================================================									     ]Scanning processes... [==================================================================									       ]Scanning processes... [===================================================================									 ]Scanning processes... [=====================================================================									   ]Scanning processes... [======================================================================								     ]Scanning processes... [=======================================================================								       ]Scanning processes... [========================================================================									 ]Scanning processes... [=========================================================================								   ]Scanning processes... [===========================================================================								     ]Scanning processes... [============================================================================							       ]Scanning processes... [=============================================================================								 ]Scanning processes... [==============================================================================								   ]Scanning processes... [===============================================================================							     ]Scanning processes... [=================================================================================							       ]Scanning processes... [==================================================================================							 ]Scanning processes... [===================================================================================							   ]Scanning processes... [====================================================================================							     ]Scanning processes... [=====================================================================================						       ]Scanning processes... [=======================================================================================							 ]Scanning processes... [========================================================================================						   ]Scanning processes... [=========================================================================================						     ]Scanning processes... [==========================================================================================						       ]Scanning processes... [============================================================================================						 ]Scanning processes... [=============================================================================================						   ]Scanning processes... [==============================================================================================					     ]Scanning processes... [===============================================================================================					       ]Scanning processes... [================================================================================================						 ]Scanning processes... [==================================================================================================					   ]Scanning processes... [===================================================================================================					     ]Scanning processes... [====================================================================================================				       ]Scanning processes... [=====================================================================================================					 ]Scanning processes... [======================================================================================================					   ]Scanning processes... [========================================================================================================				     ]Scanning processes... [=========================================================================================================				       ]Scanning processes... [==========================================================================================================				 ]Scanning processes... [===========================================================================================================				   ]Scanning processes... [============================================================================================================				     ]Scanning processes... [==============================================================================================================			       ]Scanning processes... [===============================================================================================================				 ]Scanning processes... [================================================================================================================			   ]Scanning processes... [=================================================================================================================			     ]Scanning processes... [===================================================================================================================		       ]Scanning processes... [====================================================================================================================			 ]Scanning processes... [=====================================================================================================================			   ]Scanning processes... [======================================================================================================================		     ]Scanning processes... [=======================================================================================================================		       ]Scanning processes... [=========================================================================================================================		 ]Scanning processes... [==========================================================================================================================		   ]Scanning processes... [===========================================================================================================================		     ]Scanning processes... [============================================================================================================================	       ]Scanning processes... [=============================================================================================================================		 ]Scanning processes... [===============================================================================================================================	   ]Scanning processes... [================================================================================================================================	     ]Scanning processes... [=================================================================================================================================	       ]Scanning processes... [==================================================================================================================================	 ]Scanning processes... [===================================================================================================================================	   ]Scanning processes... [=====================================================================================================================================     ]Scanning processes... [======================================================================================================================================    ]Scanning processes... [=======================================================================================================================================	 ]Scanning processes... [========================================================================================================================================  ]Scanning processes... [==========================================================================================================================================]Scanning processes...
+Scanning linux images... [																	 ]Scanning linux images... [=================================													   ]Scanning linux images... [===================================================================								     ]Scanning linux images... [=====================================================================================================				       ]Scanning linux images... [=======================================================================================================================================]Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-v11:~# 7ztai-t7zl-mx=9petc_backup.tar.7z etc_backup.tar
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive:
+1 file,a3420160 bytes (3340 KiB)
+
+Creating archive: etc_backup.tar.7z
+
+Add new data to archive: 1 file, 3420160 bytes (3340 KiB)
+
+100% 1 + etc_backup.tar
+Files read from disk: 1
+Archive size: 462318 bytes (452 KiB)
+Everything is Ok
+root@eltex-practice2-v11:~# ls
+etc_backup  etc_backup.tar  etc_backup.tar.7z  etc_backup.tar.bz2  etc_backup.tar.gz  practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# ls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.tar.7zls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.tar.7z
+-rw-r--r-- 1 root root 452K Jul 13 06:09 etc_backup.tar.7z
+-rw-r--r-- 1 root root 528K Jul 13 06:06 etc_backup.tar.bz2
+-rw-r--r-- 1 root root 556K Jul 13 06:06 etc_backup.tar.gz
+root@eltex-practice2-v11:~# echo можно отметить что 7zip сжимает более компактно
+можно отметить что 7zip сжимает более компактно
+root@eltex-practice2-v11:~# nano /etc/motd
+BBB[ Reading... ]BB[ Read 1 line ]BB  GNU nano 7.2								   /etc/motd									      BB^GB HelpB^OB Write Out	  B^WB Where Is	    B^KB CutB^TB ExecuteB^CB Location	  BM-UB UndoBM-AB Set Mark    BM-]B To Bracket	BM-QB PreviousB^XB ExitB^RB Read File	 B^\B ReplaceB^UB PasteB^JB JustifyB^/B Go To Line   BM-EB RedoBM-6B CopyB^QB Where Was	   BM-WB NextГерасимов СергейB*B13.07.2026 113:11BSave modified buffer?																		     YB YesB NB No  BCB CancelB^GB HelpBM-DB DOS FormatBM-AB AppendBM-BB Backup FileB^CB Cancel		BM-MB Mac FormatBM-PB PrependB^TB BrowseBFile Name to Write: /etc/motdB B[ Writing... ]BB BB[ Wrote 2 lines ]Broot@eltex-practice2-v11:~#echooможно/отметить что 7zip сжимает более компактноls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.tar.7z a -t7z -mx=9 etc_backup.tar.7z ettara-cfpetc_backup.tar--Ch/root/etc_backup/rsyncp-a---dry-runbvetc/./roorsyncd-ar/etc/tc_backup/
+sending incremental file list
+./
+motd
+
+sent 66,406 bytes  received 282 bytes  133,376.00 bytes/sec
+total size is 2,332,260	 speedup is 34.97
+root@eltex-practice2-v11:~# cat /root/etc_backup/motd
+Герасимов Сергей
+13.07.2026 13:11
+root@eltex-practice2-v11:~# tar -czf /root/etc_backup.tar.gz -C /root/etc_backup .
+root@eltex-practice2-v11:~# tar -tzf /root/etc_backup.tar.gz | grep 'motd$'tar -tzf /root/etc_backup.tar.gz | grep 'motd$'
+./motd
+root@eltex-practice2-v11:~# mkdir -p /root/etc_backup_bzip2
+root@eltex-practice2-v11:~# tar -xif /root/etc_backup.tar.bz2 -C /root/etc_backup_bzip2/
+root@eltex-practice2-v11:~# diff -rq /root/etc_backup /root/etc_backup_bzip2/
+Files /root/etc_backup/motd and /root/etc_backup_bzip2/motd differ
+diff: /root/etc_backup/mtab: No such file or directory
+diff: /root/etc_backup_bzip2/mtab: No such file or directory
+diff: /root/etc_backup/os-release: No such file or directory
+diff: /root/etc_backup_bzip2/os-release: No such file or directory
+diff: /root/etc_backup/resolv.conf: No such file or directory
+diff: /root/etc_backup_bzip2/resolv.conf: No such file or directory
+root@eltex-practice2-v11:~# mkdir -p /root/etc_backup_gzip
+root@eltex-practice2-v11:~# tar -xzf /root/etc_backup.tar.gz root/etc_backup_gzip
+tar: root/etc_backup_gzip: Not found in archive
+tar: Exiting with failure status due to previous errors
+root@eltex-practice2-v11:~# tar -xzf /root/etc_backup.tar.gz /root/etc_backup_gzip
+tar: /root/etc_backup_gzip: Not found in archive
+tar: Exiting with failure status due to previous errors
+root@eltex-practice2-v11:~# tar -xzf /root/etc_backup.tar.gz -C//root/etc_backup_gzip
+root@eltex-practice2-v11:~# ls
+etc_backup  etc_backup_bzip2  etc_backup_gzip  etc_backup.tar  etc_backup.tar.7z  etc_backup.tar.bz2  etc_backup.tar.gz	 practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# ls -l /root/etc_backup_gzip/motdls -l /root/etc_backup_gzip/motd
+-rw-r--r-- 1 root root 49 Jul 13 06:12 /root/etc_backup_gzip/motd
+root@eltex-practice2-v11:~# mkdir -p /root/etc_backup_7zip
+root@eltex-practice2-v11:~# 7z x /root/etc_backup.tar.7z -o/root/etc_back_7zip
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive for archives:
+1 file,a462318tbytes (452 KiB)
+
+Extracting archive: /root/etc_backup.tar.7z
+--
+Path = /root/etc_backup.tar.7z
+Type = 7z
+Physical Size = 462318
+Headers Size = 138
+Method = LZMA2:22
+Solid = -
+Blocks = 1
+
+Everything is Ok
+
+Size:	    3420160
+Compressed: 462318
+root@eltex-practice2-v11:~# ls
+etc_back_7zip  etc_backup_7zip	 etc_backup_gzip  etc_backup.tar.7z   etc_backup.tar.gz
+etc_backup     etc_backup_bzip2	 etc_backup.tar	  etc_backup.tar.bz2  practice2_eltex-v11_part1.log
+root@eltex-practice2-v11:~# tar -xf /root/etc_backup_7zip/etc_backup.tar -C /root/etc_backup_7zip/
+tar: /root/etc_backup_7zip/etc_backup.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+root@eltex-practice2-v11:~# ls etc_backup_7zip/
+root@eltex-practice2-v11:~# tar: /root/etc_backup_7zip/etc_backup.tar: Cannot open: No such file or directory
+tar: Error is not recoverabltar:x/root/etc_backup_7zip/etc_backup.tar: Cannot open: No such file or directory
+lsr-lE/root/etc_back_7zipable: exiting no
+total 3340
+-rw-r--r-- 1 root root 3420160 Jul 13 06:06 etc_backup.tar
+root@eltex-practice2-v11:~# tar -xf /root/etc_back_7zip/etc_backup.tar -C /root/etc_backup_7zip/
+root@eltex-practice2-v11:~# ls -l /root/etc_backup_7zip/motd
+-rw-r--r-- 1 root root 32 Jul 13 05:55 /root/etc_backup_7zip/motd
+root@eltex-practice2-v11:~# diff -u /root/etc_backup_gzip/motd /root/etc_backup_7zip/motd
+--- /root/etc_backup_gzip/motd	2026-07-13 06:12:02.000000000 +0000
++++ /root/etc_backup_7zip/motd	2026-07-13 05:55:36.000000000 +0000
+@@ -1,2 +1 @@
+ Герасимов Сергей
+-13.07.2026 13:11
+root@eltex-practice2-v11:~# clear
+root@eltex-practice2-v11:~# exit
+exit
+
+Script done on 2026-07-13 06:34:55+00:00 [COMMAND_EXIT_CODE="0"]

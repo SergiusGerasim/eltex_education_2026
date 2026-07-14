@@ -1,0 +1,483 @@
+Script started on 2026-07-13 09:34:51+00:00 [TERM="screen.xterm-256color" TTY="/dev/pts/0" COLUMNS="109" LINES="41"]
+[?2004hroot@eltex-practice2-v11:~# git --[K[K[K
+[?2004lusage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+[?2004hroot@eltex-practice2-v11:~# gh
+[?2004lCommand 'gh' not found, but can be installed with:
+snap install gh  # version 2.86.0-112-gc30647b78, or
+apt  install gh  # version 2.45.0-1ubuntu0.3
+See 'snap info gh' for additional versions.
+[?2004hroot@eltex-practice2-v11:~# apt apdate
+[?2004l[1;31mE: [0mInvalid operation apdate[0m
+[?2004hroot@eltex-practice2-v11:~# apt apdate[1Ppdateupdate
+[?2004l[33m0% [Working][0m            Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m                        Hit:2 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+[33m                        0% [Working][0m[33m0% [Waiting for headers][0m                        Hit:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease
+[33m                        0% [Working][0m[33m0% [Waiting for headers][0m                        Hit:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease
+[33m                        0% [Working][0m[33m20% [Working][0m             Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 3%Reading package lists... 3%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 6%Reading package lists... 6%Reading package lists... 45%Reading package lists... 45%Reading package lists... 63%Reading package lists... 63%Reading package lists... 63%Reading package lists... 63%Reading package lists... 64%Reading package lists... 64%Reading package lists... 67%Reading package lists... 67%Reading package lists... 69%Reading package lists... 69%Reading package lists... 73%Reading package lists... 73%Reading package lists... 75%Reading package lists... 75%Reading package lists... 81%Reading package lists... 81%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 83%Reading package lists... 86%Reading package lists... 86%Reading package lists... 87%Reading package lists... 87%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+81 packages can be upgraded. Run 'apt list --upgradable' to see them.
+[?2004hroot@eltex-practice2-v11:~# apt install git gh
+[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 81 not upgraded.
+Need to get 8,836 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+[33m0% [Working][0m            Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64 2.45.0-1ubuntu0.3 [8,836 kB]
+[33m0% [1 gh 11.8 kB/8,836 kB 0%][0m[33m47% [1 gh 5,159 kB/8,836 kB 58%][0m[33m                                100% [Working][0m              Fetched 8,836 kB in 1s (11.3 MB/s)
+
+7[0;40r8[1ASelecting previously unselected package gh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125686 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.3_amd64.deb ...
+7[41;0f[42m[30mProgress: [  0%][49m[39m [.......................................................................................] 87[41;0f[42m[30mProgress: [ 20%][49m[39m [#################......................................................................] 8Unpacking gh (2.45.0-1ubuntu0.3) ...
+7[41;0f[42m[30mProgress: [ 40%][49m[39m [##################################.....................................................] 8Setting up gh (2.45.0-1ubuntu0.3) ...
+7[41;0f[42m[30mProgress: [ 60%][49m[39m [####################################################...................................] 87[41;0f[42m[30mProgress: [ 80%][49m[39m [#####################################################################..................] 8Processing triggers for man-db (2.12.0-4build2) ...
+
+7[0;41r8[1A[JScanning processes... [                                                                                     ]Scanning processes... [                                                                                     ]Scanning processes... [=                                                                                    ]Scanning processes... [==                                                                                   ]Scanning processes... [==                                                                                   ]Scanning processes... [===                                                                                  ]Scanning processes... [====                                                                                 ]Scanning processes... [=====                                                                                ]Scanning processes... [=====                                                                                ]Scanning processes... [======                                                                               ]Scanning processes... [=======                                                                              ]Scanning processes... [========                                                                             ]Scanning processes... [========                                                                             ]Scanning processes... [=========                                                                            ]Scanning processes... [==========                                                                           ]Scanning processes... [===========                                                                          ]Scanning processes... [===========                                                                          ]Scanning processes... [============                                                                         ]Scanning processes... [=============                                                                        ]Scanning processes... [==============                                                                       ]Scanning processes... [==============                                                                       ]Scanning processes... [===============                                                                      ]Scanning processes... [================                                                                     ]Scanning processes... [=================                                                                    ]Scanning processes... [=================                                                                    ]Scanning processes... [==================                                                                   ]Scanning processes... [===================                                                                  ]Scanning processes... [===================                                                                  ]Scanning processes... [====================                                                                 ]Scanning processes... [=====================                                                                ]Scanning processes... [======================                                                               ]Scanning processes... [======================                                                               ]Scanning processes... [=======================                                                              ]Scanning processes... [========================                                                             ]Scanning processes... [=========================                                                            ]Scanning processes... [=========================                                                            ]Scanning processes... [==========================                                                           ]Scanning processes... [===========================                                                          ]Scanning processes... [============================                                                         ]Scanning processes... [============================                                                         ]Scanning processes... [=============================                                                        ]Scanning processes... [==============================                                                       ]Scanning processes... [===============================                                                      ]Scanning processes... [===============================                                                      ]Scanning processes... [================================                                                     ]Scanning processes... [=================================                                                    ]Scanning processes... [==================================                                                   ]Scanning processes... [==================================                                                   ]Scanning processes... [===================================                                                  ]Scanning processes... [====================================                                                 ]Scanning processes... [====================================                                                 ]Scanning processes... [=====================================                                                ]Scanning processes... [======================================                                               ]Scanning processes... [=======================================                                              ]Scanning processes... [=======================================                                              ]Scanning processes... [========================================                                             ]Scanning processes... [=========================================                                            ]Scanning processes... [==========================================                                           ]Scanning processes... [==========================================                                           ]Scanning processes... [===========================================                                          ]Scanning processes... [============================================                                         ]Scanning processes... [=============================================                                        ]Scanning processes... [=============================================                                        ]Scanning processes... [==============================================                                       ]Scanning processes... [===============================================                                      ]Scanning processes... [================================================                                     ]Scanning processes... [================================================                                     ]Scanning processes... [=================================================                                    ]Scanning processes... [==================================================                                   ]Scanning processes... [===================================================                                  ]Scanning processes... [===================================================                                  ]Scanning processes... [====================================================                                 ]Scanning processes... [=====================================================                                ]Scanning processes... [=====================================================                                ]Scanning processes... [======================================================                               ]Scanning processes... [=======================================================                              ]Scanning processes... [========================================================                             ]Scanning processes... [========================================================                             ]Scanning processes... [=========================================================                            ]Scanning processes... [==========================================================                           ]Scanning processes... [===========================================================                          ]Scanning processes... [===========================================================                          ]Scanning processes... [============================================================                         ]Scanning processes... [=============================================================                        ]Scanning processes... [==============================================================                       ]Scanning processes... [==============================================================                       ]Scanning processes... [===============================================================                      ]Scanning processes... [================================================================                     ]Scanning processes... [=================================================================                    ]Scanning processes... [=================================================================                    ]Scanning processes... [==================================================================                   ]Scanning processes... [===================================================================                  ]Scanning processes... [====================================================================                 ]Scanning processes... [====================================================================                 ]Scanning processes... [=====================================================================                ]Scanning processes... [======================================================================               ]Scanning processes... [======================================================================               ]Scanning processes... [=======================================================================              ]Scanning processes... [========================================================================             ]Scanning processes... [=========================================================================            ]Scanning processes... [=========================================================================            ]Scanning processes... [==========================================================================           ]Scanning processes... [===========================================================================          ]Scanning processes... [============================================================================         ]Scanning processes... [============================================================================         ]Scanning processes... [=============================================================================        ]Scanning processes... [==============================================================================       ]Scanning processes... [===============================================================================      ]Scanning processes... [===============================================================================      ]Scanning processes... [================================================================================     ]Scanning processes... [=================================================================================    ]Scanning processes... [==================================================================================   ]Scanning processes... [==================================================================================   ]Scanning processes... [===================================================================================  ]Scanning processes... [==================================================================================== ]Scanning processes... [=====================================================================================]Scanning processes...                                                                                        
+Scanning linux images... [                                                                                  ]Scanning linux images... [====================                                                              ]Scanning linux images... [=========================================                                         ]Scanning linux images... [=============================================================                     ]Scanning linux images... [==================================================================================]Scanning linux images...                                                                                     
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[?2004hroot@eltex-practice2-v11:~# clear
+[?2004l[H[2J[?2004hroot@eltex-practice2-v11:~# gh --version
+[?2004lgh version 2.45.0 (2025-07-18 Ubuntu 2.45.0-1ubuntu0.3)
+https://github.com/cli/cli/releases/tag/v2.45.0
+[?2004hroot@eltex-practice2-v11:~# git --version
+[?2004lgit version 2.43.0
+[?2004hroot@eltex-practice2-v11:~# git --config[K[K[K[K[K[K[K[Kconfig --global user.name Э[K"[7mSergius_Gerasim[27mSergius_Gerasim"
+[?2004l[?2004hroot@eltex-practice2-v11:~# gti[K[Kit config --global user.email "[7mse.gerasimov.m@gmail.com[27mse.gerasimov.m@gmail.com"
+[?2004l[?2004hroot@eltex-practice2-v11:~# git config --global init.defaultBranch main
+[?2004l[?2004hroot@eltex-practice2-v11:~# git config --global --list
+[?2004l[?1h=user.name=Sergius_Gerasim[m
+user.email=se.gerasimov.m@gmail.com[m
+init.defaultbranch=main[m
+[K[?1l>[?2004hroot@eltex-practice2-v11:~# ды [K[K[Kды -[K[K[K[Kls -ls[Ka ~?/[K[K/.shh
+[?2004lls: cannot access '/root/.shh': No such file or directory
+[?2004hroot@eltex-practice2-v11:~# mkdir -p ~/.shh
+[?2004l[?2004hroot@eltex-practice2-v11:~# [7mchmod 700 ~/.ssh[27mchmod 700 ~/.ssh
+[?2004l[?2004hroot@eltex-practice2-v11:~# ssh-keygen -t ed25519 -C "se.gerasimov[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kf ~/.ssh/eltex-v11_[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pchmod 700 ~/.sshssh-keygen -t ed25519 -f ~/.ssh/eltex-v11_[7mSergius_Gerasim[27mSergius_Gerasim
+[?2004lGenerating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/eltex-v11_Sergius_Gerasim
+Your public key has been saved in /root/.ssh/eltex-v11_Sergius_Gerasim.pub
+The key fingerprint is:
+SHA256:YmDNtkGPIscbB08q0kYuaKv+y6G+no8x4xZVC8AuAgg root@eltex-practice2-v11
+The key's randomart image is:
++--[ED25519 256]--+
+|E.o . o          |
+|+= o X o         |
+|*.* @ X .        |
+|+=.* O o         |
+|o.. . + S        |
+|..   . .         |
+|.+..             |
+|o.O .            |
+|+X+=.            |
++----[SHA256]-----+
+[?2004hroot@eltex-practice2-v11:~# [7m~/.ssh/ivanov.pub[27m~/.ssh/ivanov.pub
+[?2004lbash: /root/.ssh/ivanov.pub: No such file or directory
+[?2004hroot@eltex-practice2-v11:~# cat [7m~/.ssh/ivanov.pub[27m~/.ssh/ivanov.pub[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K~/.ssh/ivanov.pub[C[C[K[K[K[K[K[K[K[K[K[Kel[K[K[K/[K[K[K[K[K[K[Kls [K[K[Kls ~/.shh
+[?2004l[?2004hroot@eltex-practice2-v11:~# ls ~/.shh/
+[?2004l[?2004hroot@eltex-practice2-v11:~# ls ~/.shh/-~/.shh/l~/.shh/ ~/.shh/
+[?2004ltotal 0
+[?2004hroot@eltex-practice2-v11:~# ls -l ~/.shh/[K[K[K[K[K[K[K[K[K[K[K[K[K[7mls -la ~/.ssh[27mls -la ~/.ssh
+[?2004ltotal 20
+drwx------  2 root root 4096 Jul 13 09:45 [0m[01;34m.[0m
+drwx------ 11 root root 4096 Jul 13 09:43 [01;34m..[0m
+-rw-------  1 root root  581 Jul 10 04:54 authorized_keys
+-rw-------  1 root root  419 Jul 13 09:45 eltex-v11_Sergius_Gerasim
+-rw-r--r--  1 root root  106 Jul 13 09:45 eltex-v11_Sergius_Gerasim.pub
+[?2004hroot@eltex-practice2-v11:~# сфе [K[K[K[Kcat ~/.ssh/eltex-v11_Sergius_Gerasim.pub
+[?2004lssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILZzTu4tdztmuJlWUsLpg3gXsNRLGzw8d21/p61p4O7t root@eltex-practice2-v11
+[?2004hroot@eltex-practice2-v11:~# gh auth login
+[?2004l7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> GitHub.com[0m
+[0;39m  GitHub Enterprise Server[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m[0;36m GitHub.com[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> HTTPS[0m
+[0;39m  SSH[0m
+7[1A[0G[1A[0G8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;39m  HTTPS[0m
+[0;1;36m> SSH[0m
+7[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m[0;36m SSH[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mUpload your SSH public key to your GitHub account?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> /root/.ssh/eltex-v11_Sergius_Gerasim.pub[0m
+[0;39m  Skip[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mUpload your SSH public key to your GitHub account?[0m[0;36m /root/.ssh/eltex-v11_Sergius_Gerasim.pub[0m
+[0G[2K[0;1;92m? [0m[0;1;99mTitle for your SSH key: [0m[0;39m(GitHub CLI) [0m[?25l[?25l7[999;999f[6n8[?25h[6neltex-practice2-pgX-vY[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1B[0G[1A[?25h[0G[2K[0;1;92m? [0m[0;1;99mTitle for your SSH key: [0m[0;36meltex-practice2-pgX-vY[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> Login with a web browser[0m
+[0;39m  Paste an authentication token[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m[0;36m Login with a web browser[0m
+
+[0;33m![0m First copy your one-time code: [0;1;39m851E-6286[0m
+[0;1;39mPress Enter[0m to open github.com in your browser... ^[[B^[[B^[[B^[[A^[[A
+[0;31m![0m Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+[0;32m✓[0m Authentication complete.
+- gh config set -h github.com git_protocol ssh
+[0;32m✓[0m Configured git protocol
+[0;33m![0m Authentication credentials saved in plain text
+[0;32m✓[0m Uploaded the SSH key to your GitHub account: [0;1;39m/root/.ssh/eltex-v11_Sergius_Gerasim.pub[0m
+[0;32m✓[0m Logged in as [0;1;39mSergiusGerasim[0m
+[?2004hroot@eltex-practice2-v11:~# git status
+[?2004lfatal: not a git repository (or any of the parent directories): .git
+[?2004hroot@eltex-practice2-v11:~# [7mgh auth setup-git --hostname github.com[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgh auth setup-git --hostname github.com
+[?2004l[?2004hroot@eltex-practice2-v11:~# [7mgh auth status[27mgh auth status
+[?2004l[0;1;39mgithub.com[0m
+  [0;32m✓[0m Logged in to github.com account [0;1;39mSergiusGerasim[0m (/root/.config/gh/hosts.yml)
+  - Active account: [0;1;39mtrue[0m
+  - Git operations protocol: [0;1;39mssh[0m
+  - Token: [0;1;39mgho_************************************[0m
+  - Token scopes: [0;1;39m'admin:public_key', 'gist', 'read:org', 'repo'[0m
+[?2004hroot@eltex-practice2-v11:~# exit
+[?2004lexit
+
+Script done on 2026-07-13 09:54:31+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-07-14 09:41:39+00:00 [TERM="screen.xterm-256color" TTY="/dev/pts/0" COLUMNS="258" LINES="76"]
+[?2004hroot@eltex-practice2-v11:~# gh -[Kauth stats[Kus
+[?2004l[0;1;39mgithub.com[0m
+  [0;32m✓[0m Logged in to github.com account [0;1;39mSergiusGerasim[0m (/root/.config/gh/hosts.yml)
+  - Active account: [0;1;39mtrue[0m
+  - Git operations protocol: [0;1;39mssh[0m
+  - Token: [0;1;39mgho_************************************[0m
+  - Token scopes: [0;1;39m'admin:public_key', 'gist', 'read:org', 'repo'[0m
+[?2004hroot@eltex-practice2-v11:~# gh repo create --public eltex_education_2026
+[?2004l[0;32m✓[0m Created repository SergiusGerasim/eltex_education_2026 on GitHub
+  https://github.com/SergiusGerasim/eltex_education_2026
+[?2004hroot@eltex-practice2-v11:~# mkd[Kdir ~/eltex_educcation_2026 & [K& cd ~/eltex_education_2026
+[?2004lbash: cd: /root/eltex_education_2026: No such file or directory
+[?2004hroot@eltex-practice2-v11:~# ls
+[?2004l[0m[01;34meltex_educcation_2026[0m  [01;34metc_backup[0m       [01;34metc_backup_bzip2[0m  [01;31metc_backup.tar[0m     [01;31metc_backup.tar.bz2[0m  practice2_eltex-v11_part1_clean.log  practice2_eltex-v11_part2_clean.log  practice2_eltex-v11_part3.log
+[01;34metc_back_7zip[0m          [01;34metc_backup_7zip[0m  [01;34metc_backup_gzip[0m   [01;31metc_backup.tar.7z[0m  [01;31metc_backup.tar.gz[0m   practice2_eltex-v11_part1.log        practice2_eltex-v11_part2.log
+[?2004hroot@eltex-practice2-v11:~# rm[K[Kmv eltex_educcation_2026/[K eltex_educcation_2026/[1Pation_2026/[C[C[C[C[C[C[C[C[C[C[C[K
+[?2004l[?2004hroot@eltex-practice2-v11:~# ls
+[?2004l[0m[01;34meltex_education_2026[0m  [01;34metc_backup[0m       [01;34metc_backup_bzip2[0m  [01;31metc_backup.tar[0m     [01;31metc_backup.tar.bz2[0m  practice2_eltex-v11_part1_clean.log  practice2_eltex-v11_part2_clean.log  practice2_eltex-v11_part3.log
+[01;34metc_back_7zip[0m         [01;34metc_backup_7zip[0m  [01;34metc_backup_gzip[0m   [01;31metc_backup.tar.7z[0m  [01;31metc_backup.tar.gz[0m   practice2_eltex-v11_part1.log        practice2_eltex-v11_part2.log
+[?2004hroot@eltex-practice2-v11:~# cd eltex_education_2026/[K
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# ecj[Kho [K [K[K[K[K[Kecho "# Системное программирование в линукс.Eltex Eltex[C[C[C[C[C edu/[K[K[K[Kedu[K[K[K[K[K[K[K[K[K"k[K[KЭтекс ообчение[K[K[K[K[K[K[KбучениеЭ[K"[1@k[C[1P[1@д[1P[1@д[C[1P[1@л[C[C[C[C[C[C[C[C[C[C[C[C[C[C ЮЮ [K[K[K>> REAS[K[KADME.md
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# cat README.md 
+[?2004l# Системное программирование в линукс. Элтекс обучение
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git init
+[?2004lInitialized empty Git repository in /root/eltex_education_2026/.git/
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git add README.md 
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git commit -m -m [K[K[K"firtst[K[K[Kst commit:[K:[K"
+[?2004l[main (root-commit) 1f22bdb] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git branch -M[KN[KM main [K
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git remote sdd [K[K[K[Kadd origin https//[K[K;??[K[K[K[K[K[K[K[K[7mhttps://github.com/SergiusGerasim/eltex_education_2026.git[27mhttps://github.com/SergiusGerasim/eltex_education_2026.git
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git status
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git push -u origin main
+[?2004lEnumerating objects: 3, done.
+Counting objects:  33% (1/3)Counting objects:  66% (2/3)Counting objects: 100% (3/3)Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects:  50% (1/2)Compressing objects: 100% (2/2)Compressing objects: 100% (2/2), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SergiusGerasim/eltex_education_2026.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mkdir -p module1/task1
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mkdir module1/task2
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mkdir module1/task2[K4[K3
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# 
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# scp eltex-v11[7m@217.71.138.1[27m@217.71.138.1: [KЁ[K~?[K/elte[K[K[K[Kreport_part1.txt modue[Kle/task1/
+[?2004lkex_exchange_identification: read: Connection reset by peer
+Connection reset by 217.71.138.1 port 22
+scp: Connection closed
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# ls -l mi[Kodelw[Ke[K[K[Kule1/task1
+[?2004ltotal 0
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# учше[K[K[K[Kexit
+[?2004lexit
+
+Script done on 2026-07-14 10:03:24+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-07-14 10:07:51+00:00 [TERM="screen.xterm-256color" TTY="/dev/pts/0" COLUMNS="258" LINES="76"]
+[?2004hroot@eltex-practice2-v11:~# cd 
+.bash_history                        etc_back_7zip/                       etc_backup.tar                       .lesshst                             practice2_eltex-v11_part2.log        .viminfo
+.bashrc                              etc_backup/                          etc_backup.tar.7z                    .local/                              practice2_eltex-v11_part3.log        
+.cache/                              etc_backup_7zip/                     etc_backup.tar.bz2                   practice2_eltex-v11_part1_clean.log  .profile                             
+.config/                             etc_backup_bzip2/                    etc_backup.tar.gz                    practice2_eltex-v11_part1.log        .shh/                                
+eltex_education_2026/                etc_backup_gzip/                     .gitconfig                           practice2_eltex-v11_part2_clean.log  .ssh/                                
+root@eltex-practice2-v11:~# cd cd[K[Keltex_education_2026/
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# cd[K[Kcd [K[K[Kls -l module1/
+[?2004ltotal 12
+drwxr-xr-x 2 root root 4096 Jul 14 10:06 [0m[01;34mtask1[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:06 [01;34mtask2[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:07 [01;34mtask3[0m
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# ls -l module1/r module1/
+[?2004ltotal 12
+drwxr-xr-x 2 root root 4096 Jul 14 10:07 [0m[01;34mtask3[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:06 [01;34mtask2[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:06 [01;34mtask1[0m
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# ls -lr module1/[1P module1/[1P module1/К module1/[1P module1/R module1/
+[?2004lmodule1/:
+[0m[01;34mtask1[0m  [01;34mtask2[0m  [01;34mtask3[0m
+
+module1/task1:
+report_part1.txt
+
+module1/task2:
+eltex-v11_part.log
+
+module1/task3:
+eltex-v11_part3_gt20M.log  eltex-v11_part3.log
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# fir[K[K[Kgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mmodule1/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git ass [K[K[Kdd .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git add .status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   module1/task1/report_part1.txt[m
+	[32mnew file:   module1/task2/eltex-v11_part.log[m
+	[32mnew file:   module1/task3/eltex-v11_part3.log[m
+	[32mnew file:   module1/task3/eltex-v11_part3_gt20M.log[m
+
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git commit "[K-m ""[K[1P"[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mgit restore --staged .[27mgit restore --staged .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git restore --staged .[12Pstatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mmodule1/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mv module1/task2/eltex-v11_part.log module1//[Ktask1/
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mv module1/task2/eltex-v11_part.log module1/task1/[C[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/3 module1/task1/. module1/task1/[1P module1/task1/. module1/task1/[1P module1/task1/, module1/task1/[1P module1/task1/\ module1/task1/[1P module1/task1/? module1/task1/[1P module1/task1// module1/task1/eltex-v11_part3 module1/task1/. module1/task1/log module1/task1/
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mv module1/task3/eltex-v11_part3.log module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/[1P module1/task1/_ module1/task1/gt20M.log module1/task1/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# l[Kmv module1/task3/eltex-v11_part3_gt20M.log module1/task1/[6P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P2/eltex-v11_part[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit status[Krestore --staged .[12Pstatus[1Padd .statusls -R module1/
+[?2004lmodule1/:
+[0m[01;34mtask1[0m  [01;34mtask2[0m  [01;34mtask3[0m
+
+module1/task1:
+eltex-v11_part3_gt20M.log  eltex-v11_part3.log  eltex-v11_part.log  report_part1.txt
+
+module1/task2:
+
+module1/task3:
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git add .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   module1/task1/eltex-v11_part.log[m
+	[32mnew file:   module1/task1/eltex-v11_part3.log[m
+	[32mnew file:   module1/task1/eltex-v11_part3_gt20M.log[m
+	[32mnew file:   module1/task1/report_part1.txt[m
+
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git commit -m ""m"o"f"[1P"u"d"[1P"[1P"d"u"l"e"1"_"t"a"s"k"1"
+[?2004l[main e1f6411] module1_task1
+ 4 files changed, 628 insertions(+)
+ create mode 100644 module1/task1/eltex-v11_part.log
+ create mode 100644 module1/task1/eltex-v11_part3.log
+ create mode 100644 module1/task1/eltex-v11_part3_gt20M.log
+ create mode 100644 module1/task1/report_part1.txt
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git push
+[?2004lEnumerating objects: 9, done.
+Counting objects:  11% (1/9)Counting objects:  22% (2/9)Counting objects:  33% (3/9)Counting objects:  44% (4/9)Counting objects:  55% (5/9)Counting objects:  66% (6/9)Counting objects:  77% (7/9)Counting objects:  88% (8/9)Counting objects: 100% (9/9)Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects:  14% (1/7)Compressing objects:  28% (2/7)Compressing objects:  42% (3/7)Compressing objects:  57% (4/7)Compressing objects:  71% (5/7)Compressing objects:  85% (6/7)Compressing objects: 100% (7/7)Compressing objects: 100% (7/7), done.
+Writing objects:  12% (1/8)Writing objects:  25% (2/8)Writing objects:  37% (3/8)Writing objects:  50% (4/8)Writing objects:  62% (5/8)Writing objects:  75% (6/8)Writing objects:  87% (7/8)Writing objects: 100% (8/8)Writing objects: 100% (8/8), 11.79 KiB | 11.79 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SergiusGerasim/eltex_education_2026.git
+   1f22bdb..e1f6411  main -> main
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# св [K[K[Kcd ![K~
+[?2004l[?2004hroot@eltex-practice2-v11:~# mkdir eltex_education_2026/[K_clone && cd eltex_education_2026/[K_clone
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# git clone [7mhttps://github.com/SergiusGerasim/eltex_education_2026.git[27mhttps://github.com/SergiusGerasim/eltex_education_2026.git .
+[?2004lCloning into '.'...
+remote: Enumerating objects: 11, done.[K
+remote: Counting objects:   9% (1/11)[Kremote: Counting objects:  18% (2/11)[Kremote: Counting objects:  27% (3/11)[Kremote: Counting objects:  36% (4/11)[Kremote: Counting objects:  45% (5/11)[Kremote: Counting objects:  54% (6/11)[Kremote: Counting objects:  63% (7/11)[Kremote: Counting objects:  72% (8/11)[Kremote: Counting objects:  81% (9/11)[Kremote: Counting objects:  90% (10/11)[Kremote: Counting objects: 100% (11/11)[Kremote: Counting objects: 100% (11/11), done.[K
+remote: Compressing objects:  11% (1/9)[Kremote: Compressing objects:  22% (2/9)[Kremote: Compressing objects:  33% (3/9)[Kremote: Compressing objects:  44% (4/9)[Kremote: Compressing objects:  55% (5/9)[Kremote: Compressing objects:  66% (6/9)[Kremote: Compressing objects:  77% (7/9)[Kremote: Compressing objects:  88% (8/9)[Kremote: Compressing objects: 100% (9/9)[Kremote: Compressing objects: 100% (9/9), done.[K
+remote: Total 11 (delta 0), reused 11 (delta 0), pack-reused 0 (from 0)[K
+Receiving objects:   9% (1/11)Receiving objects:  18% (2/11)Receiving objects:  27% (3/11)Receiving objects:  36% (4/11)Receiving objects:  45% (5/11)Receiving objects:  54% (6/11)Receiving objects:  63% (7/11)Receiving objects:  72% (8/11)Receiving objects:  81% (9/11)Receiving objects:  90% (10/11)Receiving objects: 100% (11/11)Receiving objects: 100% (11/11), 12.05 KiB | 12.05 MiB/s, done.
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# ls
+[?2004l[0m[01;34mmodule1[0m  README.md
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# git remote -v
+[?2004lorigin	https://github.com/SergiusGerasim/eltex_education_2026.git (fetch)
+origin	https://github.com/SergiusGerasim/eltex_education_2026.git (push)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# [7mcd ~/eltex_education_2026[27mcd ~/eltex_education_2026
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# [7mgit status[27mgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git status[Kgit statuscd ~/eltex_education_2026[15Pgit status[Kls 
+[?2004l[0m[01;34mmodule1[0m  README.md
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# ls -l mi[Kodule1/
+[?2004ltotal 12
+drwxr-xr-x 2 root root 4096 Jul 14 10:12 [0m[01;34mtask1[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:12 [01;34mtask2[0m
+drwxr-xr-x 2 root root 4096 Jul 14 10:12 [01;34mtask3[0m
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# touch /m[K[Kmodule1/task3 [K/fail[K[K[Kail[K[K[Kil[Kle_for_part3.txt
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# got[K[Kit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mmodule1/task3/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git add.[K .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git add .status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   module1/task3/file_for_part3.txt[m
+
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git commit -m ""a"d"d" "f"i"l"e" "f"o"r" "t"a"s"[1P"[1P"[1P"m"o"u"[1P"d"u"l"e"1"?"[1P"/"p"a"r"t"1"[1P"2"/"t"a"s"k"3"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[K[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[C[K[7mgit status[27mgit status[7mgit restore --staged .[27m[1Pgit restore --staged [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mgit restore --staged .[27mgit restore --staged .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git restore --staged .[12Pstatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mmodule1/task3/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mv mode[Kule1/task3/file_for_part3.txt module1//[Ktask2/
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# mv module1/task3/file_for_part3.txt module1/task2/git status[K
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mmodule1/task2/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git statusmv module1/task3/file_for_part3.txt module1/task2/git status[Krestore --staged .[12Pstatus[1Padd .
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git commit -m "add file for module1/task2/part3"
+[?2004l[main fe2cfd0] add file for module1/task2/part3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 module1/task2/file_for_part3.txt
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# git push
+[?2004lEnumerating objects: 7, done.
+Counting objects:  14% (1/7)Counting objects:  28% (2/7)Counting objects:  42% (3/7)Counting objects:  57% (4/7)Counting objects:  71% (5/7)Counting objects:  85% (6/7)Counting objects: 100% (7/7)Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 424 bytes | 424.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SergiusGerasim/eltex_education_2026.git
+   e1f6411..fe2cfd0  main -> main
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026# cd ~.[K//[Keltex_education_2026_clone/
+[?2004l[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# git fetch
+[?2004lremote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects:  33% (1/3)[Kremote: Compressing objects:  66% (2/3)[Kremote: Compressing objects: 100% (3/3)[Kremote: Compressing objects: 100% (3/3), done.[K
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0 (from 0)[K
+Unpacking objects:  20% (1/5)Unpacking objects:  40% (2/5)Unpacking objects:  60% (3/5)Unpacking objects:  80% (4/5)Unpacking objects: 100% (5/5)Unpacking objects: 100% (5/5), 404 bytes | 404.00 KiB/s, done.
+From https://github.com/SergiusGerasim/eltex_education_2026
+   e1f6411..fe2cfd0  main       -> origin/main
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# [7mgit log origin/main[27mgit log origin/main
+[?2004l[?1h=[33mcommit fe2cfd0bedc83aea527a10c388b057b0e8c02189[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m[m
+Author: Sergius_Gerasim <se.gerasimov.m@gmail.com>[m
+Date:   Tue Jul 14 10:30:18 2026 +0000[m
+[m
+    add file for module1/task2/part3[m
+[m
+[33mcommit e1f6411fa7dca54a9ca623b9e31daacf4e0746ea[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m[m
+Author: Sergius_Gerasim <se.gerasimov.m@gmail.com>[m
+Date:   Tue Jul 14 10:14:13 2026 +0000[m
+[m
+    module1_task1[m
+[m
+[33mcommit 1f22bdb2d3eb89d6af7db8ca8e575d27289a183a[m[m
+Author: Sergius_Gerasim <se.gerasimov.m@gmail.com>[m
+Date:   Tue Jul 14 09:46:56 2026 +0000[m
+[m
+    first commit[m
+[K[?1l>[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# git dii[Kff ,ain [K[K[K[K[Kmain origin/main
+[?2004l[?1h=[1mdiff --git a/module1/task2/file_for_part3.txt b/module1/task2/file_for_part3.txt[m[m
+[1mnew file mode 100644[m[m
+[1mindex 0000000..e69de29[m[m
+[K[?1l>[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# [7mgit merge origin/main[27mgit merge origin/main
+[?2004lUpdating e1f6411..fe2cfd0
+Fast-forward
+ module1/task2/file_for_part3.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 module1/task2/file_for_part3.txt
+[?2004hroot@eltex-practice2-v11:~/eltex_education_2026_clone# exit
+[?2004lexit
+
+Script done on 2026-07-14 10:35:11+00:00 [COMMAND_EXIT_CODE="0"]
