@@ -6,7 +6,7 @@ TARGET := build/copy_file
 OBJECTS := build/main.o build/copy_file.o
 DEPENDS := $(OBJECTS:.o=.d)
 
-.PHONY: all clean
+.PHONY: all clean test
 
 all: $(TARGET)
 
@@ -24,5 +24,8 @@ build:
 
 clean:
 	rm -rf build
+
+test: all
+	./tests/test_cli.sh
 
 -include $(DEPENDS)
