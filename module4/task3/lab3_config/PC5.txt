@@ -1,0 +1,5 @@
+PC5> show
+
+NAME   IP/MASK              GATEWAY           MAC                LPORT  RHOST:PORT
+PC5    192.168.1.50/24      0.0.0.0           00:50:79:66:68:04  24346  127.0.0.1:24347
+       fe80::250:79ff:fe66:6804/64

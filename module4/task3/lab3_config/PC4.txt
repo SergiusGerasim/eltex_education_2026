@@ -1,0 +1,5 @@
+PC4> show
+
+NAME   IP/MASK              GATEWAY           MAC                LPORT  RHOST:PORT
+PC4    192.168.2.40/24      0.0.0.0           00:50:79:66:68:03  24344  127.0.0.1:24345
+       fe80::250:79ff:fe66:6803/64
