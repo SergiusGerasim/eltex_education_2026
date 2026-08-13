@@ -1,0 +1,14 @@
+     10.0.0.0/8 is variably subnetted, 12 subnets, 2 masks
+
+O       10.40.5.36/30 [110/3] via 10.40.5.26, 00:52:41, FastEthernet1/0
+O       10.40.5.32/30 [110/2] via 10.40.5.26, 00:52:41, FastEthernet1/0
+O IA    10.40.5.44/30 [110/2] via 10.40.5.3, 00:52:21, FastEthernet0/0
+O       10.40.5.40/30 [110/3] via 10.40.5.26, 00:52:41, FastEthernet1/0
+O IA    10.40.5.48/30 [110/3] via 10.40.5.3, 00:52:21, FastEthernet0/0
+C       10.40.5.0/29 is directly connected, FastEthernet0/0
+O E1    10.40.5.12/30 [110/21] via 10.40.5.1, 00:52:13, FastEthernet0/0
+O E1    10.40.5.8/30 [110/21] via 10.40.5.1, 00:52:13, FastEthernet0/0
+O E1    10.40.5.20/30 [110/21] via 10.40.5.1, 00:52:13, FastEthernet0/0
+O E1    10.40.5.16/30 [110/21] via 10.40.5.1, 00:52:13, FastEthernet0/0
+O       10.40.5.28/30 [110/2] via 10.40.5.26, 00:52:42, FastEthernet1/0
+C       10.40.5.24/30 is directly connected, FastEthernet1/0

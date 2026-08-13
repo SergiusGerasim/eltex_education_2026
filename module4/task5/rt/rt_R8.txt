@@ -1,0 +1,5 @@
+     10.0.0.0/30 is subnetted, 2 subnets
+
+C       10.40.5.44 is directly connected, FastEthernet0/0
+C       10.40.5.48 is directly connected, FastEthernet1/0
+O*IA 0.0.0.0/0 [110/2] via 10.40.5.45, 00:55:12, FastEthernet0/0
