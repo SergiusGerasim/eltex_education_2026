@@ -1,0 +1,94 @@
+Building configuration...
+
+Current configuration : 1100 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+no ip dhcp use vrf connected
+ip dhcp excluded-address 10.40.4.1
+ip dhcp excluded-address 10.40.4.9
+!
+ip dhcp pool LAN1
+   network 10.40.4.0 255.255.255.248
+   default-router 10.40.4.1
+!
+ip dhcp pool LAN2
+   network 10.40.4.8 255.255.255.248
+   default-router 10.40.4.9
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+interface FastEthernet0/0
+ description LAN3_TO_R1
+ ip address 10.40.4.18 255.255.255.252
+ duplex auto
+ speed auto
+!
+!
+no ip http server
+ip forward-protocol nd
+ip route 10.40.4.0 255.255.255.248 10.40.4.17
+ip route 10.40.4.8 255.255.255.248 10.40.4.17
+!
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
