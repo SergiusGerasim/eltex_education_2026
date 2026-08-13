@@ -1,0 +1,105 @@
+Building configuration...
+
+Current configuration : 1312 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+interface FastEthernet0/0
+ description TO_AREA0_SWITCH
+ ip address 10.40.5.3 255.255.255.248
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ description TO_R7_F0/0_AREA2
+ ip address 10.40.5.37 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/0
+ description TO_R8_F0/0_AREA1
+ ip address 10.40.5.45 255.255.255.252
+ duplex auto
+ speed auto
+!
+!
+router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ area 1 stub no-summary
+ passive-interface default
+ no passive-interface FastEthernet0/0
+ no passive-interface FastEthernet1/0
+ no passive-interface FastEthernet2/0
+ network 10.40.5.0 0.0.0.7 area 0
+ network 10.40.5.36 0.0.0.3 area 2
+ network 10.40.5.44 0.0.0.3 area 1
+!
+no ip http server
+ip forward-protocol nd
+!
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
