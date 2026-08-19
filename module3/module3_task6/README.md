@@ -88,3 +88,10 @@ make test-chat
 ```
 
 Тесты проверяют бинарный протокол, локальную UDP broadcast-доставку, подключение двух клиентов, передачу сообщения и уведомление об отключении.
+
+## Пример запуска на 2х ПК:
+<img width="1964" height="771" alt="image" src="https://github.com/user-attachments/assets/c5cd8097-6b7b-4423-9441-9ea9a95eadd5" />
+<img width="1917" height="1072" alt="Screenshot From 2026-08-19 09-55-21" src="https://github.com/user-attachments/assets/79611197-3790-46f2-97aa-57b83eef1292" />
+
+
+
