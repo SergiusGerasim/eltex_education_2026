@@ -22,3 +22,23 @@
 сообщения сервер должен сбросить связанные с данным клиентом счетчики
 и при последующем подключении клиента с тем же ip:port, начинать
 отсчет с 1.
+
+## Отчёт по работе:
+
+### пример работы на одном пк:
+Запуск сервера:
+```bash
+sudo ./build/echo_server
+```
+Запуск клиента:
+```bash
+sudo ./build/echo_client 127.0.0.1 127.0.0.1 40000
+```
+Используется loopback-сценарий:
+```bash
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+```
+
+![echo_serv_and_two_client_on_one_PC](image.png)
