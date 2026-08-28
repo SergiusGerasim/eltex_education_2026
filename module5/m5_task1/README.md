@@ -129,11 +129,20 @@ $ sudo mokutil --test-key \
 
 ### Подписание модуля
 
+**на fedora**
 ```bash
 $ /lib/modules/$(uname -r)/build/scripts/sign-file \
     sha512 \
     ~/.local/share/kernel-module-signing/MOK.priv \
     ~/.local/share/kernel-module-signing/MOK.der \
+    ./build/hello.ko
+```
+**на Kubuntu:** (я  начиная со второго задания, выполенял их под ubuntu)
+```bash
+/lib/modules/$(uname -r)/build/scripts/sign-file \
+    sha512 \
+    ~/.local/share/module-signing/MOK.priv \
+    ~/.local/share/module-signing/MOK.der \
     ./build/hello.ko
 ```
 
@@ -153,10 +162,20 @@ sig_hashalgo:   sha512
 ```bash
 $ sudo insmod ./build/hello.ko
 $ lsmod | grep hello
-$ sudo dmesg | tail -n 20
+$ sudo dmesg | tail -n 5
 ```
 
 ![Загрузка модуля и проверка через modinfo, lsmod и dmesg](module-load.png)
+
+на ubuntu:
+```bash
+modinfo ./build/hello.ko | grep -E 'signer|sig_key|sig_hashalgo'
+
+sudo insmod ./build/hello.ko
+sudo dmesg | tail -n 5
+```
+
+
 
 ```bash
 $ sudo rmmod hello

@@ -1,9 +1,9 @@
-obj-m += proc_exchange.o
+obj-m += kbleds.o
 
 KDIR := /lib/modules/$(shell uname -r)/build
 MODULE_DIR := $(CURDIR)
 BUILD_DIR := $(CURDIR)/build
-MODULE_FILE := $(BUILD_DIR)/proc_exchange.ko
+MODULE_FILE := $(BUILD_DIR)/kbleds.ko
 SIGN_FILE := $(KDIR)/scripts/sign-file
 SIGN_KEY_DIR ?= $(HOME)/.local/share/module-signing
 SIGN_PRIVATE_KEY ?= $(SIGN_KEY_DIR)/MOK.priv
