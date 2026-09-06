@@ -42,3 +42,19 @@ sudo ./build/echo_client 127.0.0.1 127.0.0.1 40000
 ```
 
 ![echo_serv_and_two_client_on_one_PC](image.png)
+
+### Проверка на 2х ПК
+на ПК выступающем в роли сервера:
+
+```bash
+sudo ./build/echo_server
+```
+в другом терминале(чтобы отследить прием/отправку пакетов):
+```bash
+sudo tcpdump -ni wlo1 -vv -X 'udp port 5000'
+```
+
+клиент на другом пк:
+```bash
+sudo ./build/echo_client 192.168.0.170 192.168.0.162 40000
+```
