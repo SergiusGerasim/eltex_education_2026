@@ -39,7 +39,7 @@
 ### Сборка
 
 ```bash
-cd ~/Documents/eltex_education_2026/module5/m5_task3
+cd ~/Documents/eltex_education_2026/05-linux-kernel-modules/03-keyboard-leds-sysfs
 make
 ```
 

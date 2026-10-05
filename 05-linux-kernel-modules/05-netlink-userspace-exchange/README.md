@@ -32,7 +32,7 @@
 ## Сборка
 
 ```bash
-cd ~/Documents/eltex_education_2026/module5/m5_task5
+cd ~/Documents/eltex_education_2026/05-linux-kernel-modules/05-netlink-userspace-exchange
 make
 ```
 Результаты в каталоге

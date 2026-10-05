@@ -6,7 +6,7 @@
 
 ## Пример рузультата запуска make 
 ```bash
-seger@GerasimLaptop:~/eltex_education_2026/task6.2_dynamic_lib$ make 
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-02-shared-phone-book-library$ make 
 mkdir -p build
 gcc -Iinclude -I../libs/Unity/src -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -c main.c -o build/main.o
 mkdir -p build
@@ -19,14 +19,14 @@ gcc build/main.o build/phone_book_ui.o -Lbuild -lphonebook -Wl,-rpath,'$ORIGIN' 
 
 ## Проверка библиотеки:
 ```bash
-seger@GerasimLaptop:~/eltex_education_2026/task6.2_dynamic_lib$ file build/libphonebook.so 
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-02-shared-phone-book-library$ file build/libphonebook.so 
 build/libphonebook.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8a23fe87bf532f4263de05d372d989ce22bb9aad, not stripped
-seger@GerasimLaptop:~/eltex_education_2026/task6.2_dynamic_lib$ ldd build/phone_book
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-02-shared-phone-book-library$ ldd build/phone_book
         linux-vdso.so.1 (0x00007fffbaeef000)
-        libphonebook.so => /home/seger/eltex_education_2026/task6.2_dynamic_lib/build/libphonebook.so (0x00007a1bb6638000)
+        libphonebook.so => /home/seger/eltex_education_2026/02-c-programming/06-02-shared-phone-book-library/build/libphonebook.so (0x00007a1bb6638000)
         libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007a1bb6400000)
         /lib64/ld-linux-x86-64.so.2 (0x00007a1bb6646000)
-seger@GerasimLaptop:~/eltex_education_2026/task6.2_dynamic_lib$ nm -D build/libphonebook.so 
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-02-shared-phone-book-library$ nm -D build/libphonebook.so 
                  w _ITM_deregisterTMCloneTable
                  w _ITM_registerTMCloneTable
                  w __cxa_finalize@GLIBC_2.2.5

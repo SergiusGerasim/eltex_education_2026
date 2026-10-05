@@ -7,7 +7,7 @@
 ## запуск make:
 
 ```bash
-seger@GerasimLaptop:~/eltex_education_2026/task6.3_calc_dynamic_libS$ make
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-03-calculator-plugins$ make
 gcc -Iinclude -I../libs/Unity/src -DUNITY_INCLUDE_DOUBLE -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -MMD -MP -c main.c -o build/main.o
 gcc -Iinclude -I../libs/Unity/src -DUNITY_INCLUDE_DOUBLE -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -MMD -MP -c src/calculator.c -o build/src/calculator.o
 gcc  build/main.o build/src/calculator.o -lm -ldl -o build/calculator
@@ -21,7 +21,7 @@ gcc -Iinclude -I../libs/Unity/src -DUNITY_INCLUDE_DOUBLE -std=c11 -Wall -Wextra 
 ## результат работы тестов:
 
 ```bash
-seger@GerasimLaptop:~/eltex_education_2026/task6.3_calc_dynamic_libS$ make test
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-03-calculator-plugins$ make test
 ./build/test_calculator ./build/plugins
 tests/test_calculator.c:88:test_dynamic_libraries_should_load_all_plugins:PASS
 tests/test_calculator.c:89:test_functions_from_dynamic_libraries_should_work:PASS

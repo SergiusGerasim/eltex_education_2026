@@ -14,7 +14,7 @@ $(APP): $(APP_OBJECTS) $(LIBRARY)
 
 ## Пример рузультата запуска make 
 ```bash
-seger@GerasimLaptop:~/eltex_education_2026/task6.1_static_lib$ make
+seger@GerasimLaptop:~/eltex_education_2026/02-c-programming/06-01-static-phone-book-library$ make
 mkdir -p build
 gcc -Iinclude -I../libs/Unity/src -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -c main.c -o build/main.o
 mkdir -p build

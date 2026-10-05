@@ -1,6 +1,6 @@
 CC = gcc
 
-UNITY_DIR = ../libs/Unity
+UNITY_DIR = ../../libs/Unity
 
 CPPFLAGS = -Iinclude -I$(UNITY_DIR)/src -DUNITY_INCLUDE_DOUBLE
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow

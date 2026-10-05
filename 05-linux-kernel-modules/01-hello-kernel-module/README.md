@@ -63,7 +63,7 @@ $ make clean
 
 ```text
 $ modinfo ./build/hello.ko
-filename:       /home/serguisimus/Documents/eltex_education_2026/module5/m5_task1/./build/hello.ko
+filename:       /home/serguisimus/Documents/eltex_education_2026/05-linux-kernel-modules/01-hello-kernel-module/build/hello.ko
 description:    Hello World kernel module for Eltex module 5 task 1
 author:         Gerasimov Sergei Mikhailovich <se.gerasimov.m@gmail.com>
 license:        Gerasimov Educational License v1.0
